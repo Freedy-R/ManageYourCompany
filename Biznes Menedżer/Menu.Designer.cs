@@ -33,43 +33,46 @@ namespace Biznes_Menedżer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMenu));
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabpMenu = new System.Windows.Forms.TabPage();
-            this.tabObiekty = new System.Windows.Forms.TabPage();
             this.menuLayout = new System.Windows.Forms.TableLayoutPanel();
             this.menuCategory = new System.Windows.Forms.TableLayoutPanel();
             this.btnWorkers = new System.Windows.Forms.Button();
             this.btnMagazine = new System.Windows.Forms.Button();
             this.showWindows = new System.Windows.Forms.Panel();
+            this.tabObiekty = new System.Windows.Forms.TabPage();
             this.ObjectLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnADD = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
-            this.btnADD = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.oddzialyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaOddzialuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kodPocztwoyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miejscowoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.liczbaPracownikowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.businessDataDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.businessDataDataSet = new Biznes_Menedżer.BusinessDataDataSet();
             this.businessDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oddzialyTableAdapter = new Biznes_Menedżer.BusinessDataDataSetTableAdapters.OddzialyTableAdapter();
+            this.oddzialyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new Biznes_Menedżer.BusinessDataDataSetTableAdapters.TableAdapterManager();
+            this.oddzialyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMenu.SuspendLayout();
             this.tabpMenu.SuspendLayout();
-            this.tabObiekty.SuspendLayout();
             this.menuLayout.SuspendLayout();
             this.menuCategory.SuspendLayout();
+            this.tabObiekty.SuspendLayout();
             this.ObjectLayout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oddzialyDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -96,17 +99,6 @@ namespace Biznes_Menedżer
             this.tabpMenu.TabIndex = 0;
             this.tabpMenu.Text = "Menu";
             // 
-            // tabObiekty
-            // 
-            this.tabObiekty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
-            this.tabObiekty.Controls.Add(this.ObjectLayout);
-            this.tabObiekty.Location = new System.Drawing.Point(4, 22);
-            this.tabObiekty.Name = "tabObiekty";
-            this.tabObiekty.Padding = new System.Windows.Forms.Padding(3);
-            this.tabObiekty.Size = new System.Drawing.Size(1572, 776);
-            this.tabObiekty.TabIndex = 1;
-            this.tabObiekty.Text = "Obiekty";
-            // 
             // menuLayout
             // 
             this.menuLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
@@ -118,7 +110,7 @@ namespace Biznes_Menedżer
             this.menuLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.menuLayout.Location = new System.Drawing.Point(3, 3);
-            this.menuLayout.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.menuLayout.Margin = new System.Windows.Forms.Padding(0);
             this.menuLayout.Name = "menuLayout";
             this.menuLayout.RowCount = 1;
             this.menuLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -182,12 +174,23 @@ namespace Biznes_Menedżer
             this.showWindows.Size = new System.Drawing.Size(1247, 764);
             this.showWindows.TabIndex = 1;
             // 
+            // tabObiekty
+            // 
+            this.tabObiekty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
+            this.tabObiekty.Controls.Add(this.ObjectLayout);
+            this.tabObiekty.Location = new System.Drawing.Point(4, 22);
+            this.tabObiekty.Name = "tabObiekty";
+            this.tabObiekty.Padding = new System.Windows.Forms.Padding(3);
+            this.tabObiekty.Size = new System.Drawing.Size(1572, 776);
+            this.tabObiekty.TabIndex = 1;
+            this.tabObiekty.Text = "Obiekty";
+            // 
             // ObjectLayout
             // 
             this.ObjectLayout.ColumnCount = 1;
             this.ObjectLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ObjectLayout.Controls.Add(this.oddzialyDataGridView, 0, 0);
             this.ObjectLayout.Controls.Add(this.tableLayoutPanel1, 0, 1);
-            this.ObjectLayout.Controls.Add(this.dataGridView1, 0, 0);
             this.ObjectLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ObjectLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.ObjectLayout.Location = new System.Drawing.Point(3, 3);
@@ -219,6 +222,34 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1566, 77);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // btnADD
+            // 
+            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.btnADD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnADD.Location = new System.Drawing.Point(1173, 0);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(0);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(393, 77);
+            this.btnADD.TabIndex = 3;
+            this.btnADD.Text = "Dodaj";
+            this.btnADD.UseVisualStyleBackColor = false;
+            // 
+            // btnModify
+            // 
+            this.btnModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.btnModify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModify.Location = new System.Drawing.Point(782, 0);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(0);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(391, 77);
+            this.btnModify.TabIndex = 2;
+            this.btnModify.Text = "Zmodyfikuj";
+            this.btnModify.UseVisualStyleBackColor = false;
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -244,102 +275,10 @@ namespace Biznes_Menedżer
             this.btnRemove.Text = "Usuń";
             this.btnRemove.UseVisualStyleBackColor = false;
             // 
-            // btnModify
-            // 
-            this.btnModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
-            this.btnModify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnModify.Location = new System.Drawing.Point(782, 0);
-            this.btnModify.Margin = new System.Windows.Forms.Padding(0);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(391, 77);
-            this.btnModify.TabIndex = 2;
-            this.btnModify.Text = "Zmodyfikuj";
-            this.btnModify.UseVisualStyleBackColor = false;
-            // 
-            // btnADD
-            // 
-            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
-            this.btnADD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnADD.Location = new System.Drawing.Point(1173, 0);
-            this.btnADD.Margin = new System.Windows.Forms.Padding(0);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(393, 77);
-            this.btnADD.TabIndex = 3;
-            this.btnADD.Text = "Dodaj";
-            this.btnADD.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nazwaOddzialuDataGridViewTextBoxColumn,
-            this.adresDataGridViewTextBoxColumn,
-            this.kodPocztwoyDataGridViewTextBoxColumn,
-            this.miejscowoscDataGridViewTextBoxColumn,
-            this.telefonDataGridViewTextBoxColumn,
-            this.liczbaPracownikowDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.oddzialyBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1566, 693);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // oddzialyBindingSource
             // 
             this.oddzialyBindingSource.DataMember = "Oddzialy";
             this.oddzialyBindingSource.DataSource = this.businessDataDataSetBindingSource1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nazwaOddzialuDataGridViewTextBoxColumn
-            // 
-            this.nazwaOddzialuDataGridViewTextBoxColumn.DataPropertyName = "Nazwa_Oddzialu";
-            this.nazwaOddzialuDataGridViewTextBoxColumn.HeaderText = "Nazwa_Oddzialu";
-            this.nazwaOddzialuDataGridViewTextBoxColumn.Name = "nazwaOddzialuDataGridViewTextBoxColumn";
-            // 
-            // adresDataGridViewTextBoxColumn
-            // 
-            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
-            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
-            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
-            // 
-            // kodPocztwoyDataGridViewTextBoxColumn
-            // 
-            this.kodPocztwoyDataGridViewTextBoxColumn.DataPropertyName = "Kod_Pocztwoy";
-            this.kodPocztwoyDataGridViewTextBoxColumn.HeaderText = "Kod_Pocztwoy";
-            this.kodPocztwoyDataGridViewTextBoxColumn.Name = "kodPocztwoyDataGridViewTextBoxColumn";
-            // 
-            // miejscowoscDataGridViewTextBoxColumn
-            // 
-            this.miejscowoscDataGridViewTextBoxColumn.DataPropertyName = "Miejscowosc";
-            this.miejscowoscDataGridViewTextBoxColumn.HeaderText = "Miejscowosc";
-            this.miejscowoscDataGridViewTextBoxColumn.Name = "miejscowoscDataGridViewTextBoxColumn";
-            // 
-            // telefonDataGridViewTextBoxColumn
-            // 
-            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
-            // 
-            // liczbaPracownikowDataGridViewTextBoxColumn
-            // 
-            this.liczbaPracownikowDataGridViewTextBoxColumn.DataPropertyName = "Liczba_Pracownikow";
-            this.liczbaPracownikowDataGridViewTextBoxColumn.HeaderText = "Liczba_Pracownikow";
-            this.liczbaPracownikowDataGridViewTextBoxColumn.Name = "liczbaPracownikowDataGridViewTextBoxColumn";
             // 
             // businessDataDataSetBindingSource1
             // 
@@ -360,6 +299,84 @@ namespace Biznes_Menedżer
             // 
             this.oddzialyTableAdapter.ClearBeforeFill = true;
             // 
+            // oddzialyBindingSource1
+            // 
+            this.oddzialyBindingSource1.DataMember = "Oddzialy";
+            this.oddzialyBindingSource1.DataSource = this.businessDataDataSet;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.OddzialyTableAdapter = null;
+            this.tableAdapterManager.PracownicyTableAdapter = null;
+            this.tableAdapterManager.TowarTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Biznes_Menedżer.BusinessDataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // oddzialyDataGridView
+            // 
+            this.oddzialyDataGridView.AutoGenerateColumns = false;
+            this.oddzialyDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.oddzialyDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
+            this.oddzialyDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.oddzialyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.oddzialyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.oddzialyDataGridView.DataSource = this.oddzialyBindingSource1;
+            this.oddzialyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.oddzialyDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.oddzialyDataGridView.Name = "oddzialyDataGridView";
+            this.oddzialyDataGridView.Size = new System.Drawing.Size(1560, 687);
+            this.oddzialyDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nazwa_Oddzialu";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa_Oddzialu";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Adres";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Adres";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Kod_Pocztwoy";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Kod_Pocztwoy";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Miejscowosc";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Miejscowosc";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Telefon";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Telefon";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Liczba_Pracownikow";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Liczba_Pracownikow";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
             // fMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,16 +389,17 @@ namespace Biznes_Menedżer
             this.Load += new System.EventHandler(this.fMenu_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabpMenu.ResumeLayout(false);
-            this.tabObiekty.ResumeLayout(false);
             this.menuLayout.ResumeLayout(false);
             this.menuCategory.ResumeLayout(false);
+            this.tabObiekty.ResumeLayout(false);
             this.ObjectLayout.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oddzialyDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,19 +420,21 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource businessDataDataSetBindingSource1;
         private BusinessDataDataSet businessDataDataSet;
         private System.Windows.Forms.BindingSource businessDataDataSetBindingSource;
         private System.Windows.Forms.BindingSource oddzialyBindingSource;
         private BusinessDataDataSetTableAdapters.OddzialyTableAdapter oddzialyTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwaOddzialuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kodPocztwoyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn miejscowoscDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn liczbaPracownikowDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView oddzialyDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.BindingSource oddzialyBindingSource1;
+        private BusinessDataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
 

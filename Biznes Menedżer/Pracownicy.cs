@@ -16,5 +16,12 @@ namespace Biznes_Menedżer
         {
             InitializeComponent();
         }
+
+        private void fPracownicy_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'businessDataDataSet.Pracownicy' table. You can move, or remove it, as needed.
+            this.pracownicyTableAdapter.Fill(this.businessDataDataSet.Pracownicy);
+
+        }
     }
 }
