@@ -139,6 +139,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Addons\Icons\boxes.png" />
+    <Content Include="Addons\Icons\workers.png" />
     <Content Include="BusinessData.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -156,9 +158,7 @@
     <Content Include="Documentation\Towar_Przeglądaj.png" />
     <Content Include="Documentation\Towar_zmień_stan.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Addons\Icons\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

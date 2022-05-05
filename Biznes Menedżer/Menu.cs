@@ -17,8 +17,32 @@ namespace Biznes_Menedżer
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        public void DisplayForm(object Form)
         {
+            if(this.showWindows.Controls.Count > 0)
+                this.showWindows.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.showWindows.Controls.Add(f);
+            this.showWindows.Tag = f;
+            f.Show();
+        }
+
+        private void btnWorkers_Click(object sender, EventArgs e)
+        {
+            DisplayForm(new fPracownicy());
+        }
+
+        private void btnMagazine_Click(object sender, EventArgs e)
+        {
+            DisplayForm(new fTowar());
+        }
+
+        private void fMenu_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'businessDataDataSet.Oddzialy' table. You can move, or remove it, as needed.
+            this.oddzialyTableAdapter.Fill(this.businessDataDataSet.Oddzialy);
 
         }
     }
