@@ -70,7 +70,7 @@ namespace Biznes_Menedżer
         {
             string szukam = txtSzukam.Text;
             tworzenie_pol();
-            var qwszukanie = "SELECT * FROM pracownicy WHERE column LIKE '%" + szukam + "%'";
+            var qwszukanie = "SELECT * FROM `pracownicy` WHERE `ID` LIKE '%"+szukam+ "%' OR `ID_obiektu` LIKE '%" + szukam + "%' OR `Imie` LIKE '%" + szukam + "%' OR `Nazwisko` LIKE '%" + szukam + "%' OR `Miasto` LIKE '%" + szukam + "%' OR `Adres` LIKE '%" + szukam + "%' OR `Płeć` LIKE '%" + szukam + "%' OR `Kod_Pocztowy` LIKE '%" + szukam + "%' OR `Data_Urodzenia` LIKE '%" + szukam + "%' OR `Kraj_Urodzenia` LIKE '%" + szukam + "%' OR `E-mail` LIKE '%" + szukam + "%' OR `Numer_Kontaktowy` LIKE '%" + szukam + "%' OR `Stanowisko` LIKE '%" + szukam + "%' OR `Pesel` LIKE '%" + szukam + "%' OR `Pochodzenie` LIKE '%" + szukam + "%'";
             if (szukam != "")
                 ladowanie_bazy(qwszukanie);
         }
