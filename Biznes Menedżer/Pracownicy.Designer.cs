@@ -514,7 +514,7 @@ namespace Biznes_Menedżer
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabPage2.Controls.Add(this.W_SearchLayout);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -587,6 +587,7 @@ namespace Biznes_Menedżer
             // 
             // dgvPrzegladaj
             // 
+            this.dgvPrzegladaj.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvPrzegladaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrzegladaj.Location = new System.Drawing.Point(3, 89);
             this.dgvPrzegladaj.Name = "dgvPrzegladaj";

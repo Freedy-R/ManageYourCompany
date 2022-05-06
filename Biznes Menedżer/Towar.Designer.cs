@@ -34,13 +34,15 @@ namespace Biznes_Menedżer
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSzukaj = new System.Windows.Forms.Button();
+            this.txtSzukam = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgvPrzegladaj = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrzegladaj)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -76,12 +78,14 @@ namespace Biznes_Menedżer
             this.tabPage2.Size = new System.Drawing.Size(1658, 563);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Przeglądaj";
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvPrzegladaj, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -98,8 +102,8 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSzukaj, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtSzukam, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -110,30 +114,31 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1652, 111);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // button1
+            // btnSzukaj
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1321, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(331, 111);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Szukaj";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSzukaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.btnSzukaj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSzukaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSzukaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSzukaj.Location = new System.Drawing.Point(1321, 0);
+            this.btnSzukaj.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSzukaj.Name = "btnSzukaj";
+            this.btnSzukaj.Size = new System.Drawing.Size(331, 111);
+            this.btnSzukaj.TabIndex = 2;
+            this.btnSzukaj.Text = "Szukaj";
+            this.btnSzukaj.UseVisualStyleBackColor = false;
+            this.btnSzukaj.Click += new System.EventHandler(this.btnSzukaj_Click);
             // 
-            // textBox1
+            // txtSzukam
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1321, 111);
-            this.textBox1.TabIndex = 1;
+            this.txtSzukam.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSzukam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSzukam.Location = new System.Drawing.Point(0, 0);
+            this.txtSzukam.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSzukam.Multiline = true;
+            this.txtSzukam.Name = "txtSzukam";
+            this.txtSzukam.Size = new System.Drawing.Size(1321, 111);
+            this.txtSzukam.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -144,6 +149,16 @@ namespace Biznes_Menedżer
             this.tabPage3.Size = new System.Drawing.Size(1658, 563);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modyfikuj";
+            // 
+            // dgvPrzegladaj
+            // 
+            this.dgvPrzegladaj.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPrzegladaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrzegladaj.Location = new System.Drawing.Point(3, 114);
+            this.dgvPrzegladaj.Name = "dgvPrzegladaj";
+            this.dgvPrzegladaj.Size = new System.Drawing.Size(1646, 440);
+            this.dgvPrzegladaj.TabIndex = 1;
+            this.dgvPrzegladaj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellContentClick);
             // 
             // fTowar
             // 
@@ -160,6 +175,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrzegladaj)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,7 +188,8 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSzukam;
+        private System.Windows.Forms.Button btnSzukaj;
+        private System.Windows.Forms.DataGridView dgvPrzegladaj;
     }
 }
