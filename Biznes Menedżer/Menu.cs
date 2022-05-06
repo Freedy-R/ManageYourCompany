@@ -39,11 +39,5 @@ namespace Biznes_Menedżer
             DisplayForm(new fTowar());
         }
 
-        private void fMenu_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'businessDataDataSet.Oddzialy' table. You can move, or remove it, as needed.
-            this.oddzialyTableAdapter.Fill(this.businessDataDataSet.Oddzialy);
-
-        }
     }
 }

@@ -61,11 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessDataDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BusinessDataDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,17 +109,6 @@
     <EmbeddedResource Include="Towar.resx">
       <DependentUpon>Towar.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="BusinessDataDataSet.xsc">
-      <DependentUpon>BusinessDataDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BusinessDataDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BusinessDataDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BusinessDataDataSet.xss">
-      <DependentUpon>BusinessDataDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,13 +125,6 @@
   <ItemGroup>
     <Content Include="Addons\Icons\boxes.png" />
     <Content Include="Addons\Icons\workers.png" />
-    <Content Include="BusinessData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="BusinessData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>BusinessData.mdf</DependentUpon>
-    </Content>
     <Content Include="Documentation\Menu.png" />
     <Content Include="Documentation\Obiekty.png" />
     <Content Include="Documentation\Pracownicy_Dodaj.png" />

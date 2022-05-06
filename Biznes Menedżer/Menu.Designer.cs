@@ -29,7 +29,6 @@ namespace Biznes_Menedżer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMenu));
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabpMenu = new System.Windows.Forms.TabPage();
@@ -45,21 +44,6 @@ namespace Biznes_Menedżer
             this.btnModify = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.oddzialyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.businessDataDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.businessDataDataSet = new Biznes_Menedżer.BusinessDataDataSet();
-            this.businessDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oddzialyTableAdapter = new Biznes_Menedżer.BusinessDataDataSetTableAdapters.OddzialyTableAdapter();
-            this.oddzialyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new Biznes_Menedżer.BusinessDataDataSetTableAdapters.TableAdapterManager();
-            this.oddzialyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMenu.SuspendLayout();
             this.tabpMenu.SuspendLayout();
             this.menuLayout.SuspendLayout();
@@ -67,12 +51,6 @@ namespace Biznes_Menedżer
             this.tabObiekty.SuspendLayout();
             this.ObjectLayout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oddzialyDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -189,7 +167,6 @@ namespace Biznes_Menedżer
             // 
             this.ObjectLayout.ColumnCount = 1;
             this.ObjectLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ObjectLayout.Controls.Add(this.oddzialyDataGridView, 0, 0);
             this.ObjectLayout.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.ObjectLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ObjectLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -275,108 +252,6 @@ namespace Biznes_Menedżer
             this.btnRemove.Text = "Usuń";
             this.btnRemove.UseVisualStyleBackColor = false;
             // 
-            // oddzialyBindingSource
-            // 
-            this.oddzialyBindingSource.DataMember = "Oddzialy";
-            this.oddzialyBindingSource.DataSource = this.businessDataDataSetBindingSource1;
-            // 
-            // businessDataDataSetBindingSource1
-            // 
-            this.businessDataDataSetBindingSource1.DataSource = this.businessDataDataSet;
-            this.businessDataDataSetBindingSource1.Position = 0;
-            // 
-            // businessDataDataSet
-            // 
-            this.businessDataDataSet.DataSetName = "BusinessDataDataSet";
-            this.businessDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // businessDataDataSetBindingSource
-            // 
-            this.businessDataDataSetBindingSource.DataSource = this.businessDataDataSet;
-            this.businessDataDataSetBindingSource.Position = 0;
-            // 
-            // oddzialyTableAdapter
-            // 
-            this.oddzialyTableAdapter.ClearBeforeFill = true;
-            // 
-            // oddzialyBindingSource1
-            // 
-            this.oddzialyBindingSource1.DataMember = "Oddzialy";
-            this.oddzialyBindingSource1.DataSource = this.businessDataDataSet;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.OddzialyTableAdapter = null;
-            this.tableAdapterManager.PracownicyTableAdapter = null;
-            this.tableAdapterManager.TowarTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Biznes_Menedżer.BusinessDataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // oddzialyDataGridView
-            // 
-            this.oddzialyDataGridView.AutoGenerateColumns = false;
-            this.oddzialyDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.oddzialyDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
-            this.oddzialyDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.oddzialyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.oddzialyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.oddzialyDataGridView.DataSource = this.oddzialyBindingSource1;
-            this.oddzialyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.oddzialyDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.oddzialyDataGridView.Name = "oddzialyDataGridView";
-            this.oddzialyDataGridView.Size = new System.Drawing.Size(1560, 687);
-            this.oddzialyDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nazwa_Oddzialu";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nazwa_Oddzialu";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Adres";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Adres";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Kod_Pocztwoy";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Kod_Pocztwoy";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Miejscowosc";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Miejscowosc";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Telefon";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Telefon";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Liczba_Pracownikow";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Liczba_Pracownikow";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
             // fMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,7 +261,6 @@ namespace Biznes_Menedżer
             this.Controls.Add(this.tabMenu);
             this.Name = "fMenu";
             this.Text = "Biznes Menedżer";
-            this.Load += new System.EventHandler(this.fMenu_Load);
             this.tabMenu.ResumeLayout(false);
             this.tabpMenu.ResumeLayout(false);
             this.menuLayout.ResumeLayout(false);
@@ -394,12 +268,6 @@ namespace Biznes_Menedżer
             this.tabObiekty.ResumeLayout(false);
             this.ObjectLayout.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.businessDataDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oddzialyBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oddzialyDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,21 +288,7 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.BindingSource businessDataDataSetBindingSource1;
-        private BusinessDataDataSet businessDataDataSet;
-        private System.Windows.Forms.BindingSource businessDataDataSetBindingSource;
-        private System.Windows.Forms.BindingSource oddzialyBindingSource;
-        private BusinessDataDataSetTableAdapters.OddzialyTableAdapter oddzialyTableAdapter;
-        private System.Windows.Forms.DataGridView oddzialyDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource oddzialyBindingSource1;
-        private BusinessDataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
 
