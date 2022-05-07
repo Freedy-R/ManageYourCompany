@@ -42,8 +42,9 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnADD = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtWybrano = new System.Windows.Forms.RichTextBox();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.dgvObiekty = new System.Windows.Forms.DataGridView();
             this.tabMenu.SuspendLayout();
             this.tabpMenu.SuspendLayout();
             this.menuLayout.SuspendLayout();
@@ -51,6 +52,7 @@ namespace Biznes_Menedżer
             this.tabObiekty.SuspendLayout();
             this.ObjectLayout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObiekty)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMenu
@@ -162,12 +164,14 @@ namespace Biznes_Menedżer
             this.tabObiekty.Size = new System.Drawing.Size(1572, 776);
             this.tabObiekty.TabIndex = 1;
             this.tabObiekty.Text = "Obiekty";
+            this.tabObiekty.Enter += new System.EventHandler(this.tabObiekty_Enter);
             // 
             // ObjectLayout
             // 
             this.ObjectLayout.ColumnCount = 1;
             this.ObjectLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ObjectLayout.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.ObjectLayout.Controls.Add(this.dgvObiekty, 0, 0);
             this.ObjectLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ObjectLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.ObjectLayout.Location = new System.Drawing.Point(3, 3);
@@ -188,7 +192,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.btnADD, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnModify, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rtxtWybrano, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnRemove, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 693);
@@ -227,16 +231,18 @@ namespace Biznes_Menedżer
             this.btnModify.Text = "Zmodyfikuj";
             this.btnModify.UseVisualStyleBackColor = false;
             // 
-            // richTextBox1
+            // rtxtWybrano
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(391, 77);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "Wybrałeś Obiekt z ID:";
+            this.rtxtWybrano.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtxtWybrano.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtxtWybrano.Location = new System.Drawing.Point(0, 0);
+            this.rtxtWybrano.Margin = new System.Windows.Forms.Padding(0);
+            this.rtxtWybrano.Multiline = false;
+            this.rtxtWybrano.Name = "rtxtWybrano";
+            this.rtxtWybrano.ReadOnly = true;
+            this.rtxtWybrano.Size = new System.Drawing.Size(391, 77);
+            this.rtxtWybrano.TabIndex = 0;
+            this.rtxtWybrano.Text = "Wybrałeś Obiekt z ID: ";
             // 
             // btnRemove
             // 
@@ -251,6 +257,21 @@ namespace Biznes_Menedżer
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Usuń";
             this.btnRemove.UseVisualStyleBackColor = false;
+            // 
+            // dgvObiekty
+            // 
+            this.dgvObiekty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvObiekty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObiekty.Location = new System.Drawing.Point(3, 3);
+            this.dgvObiekty.Name = "dgvObiekty";
+            this.dgvObiekty.Size = new System.Drawing.Size(1560, 687);
+            this.dgvObiekty.TabIndex = 1;
+            this.dgvObiekty.CancelRowEdit += new System.Windows.Forms.QuestionEventHandler(this.dgvObiekty_CancelRowEdit);
+            this.dgvObiekty.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvObiekty_CellBeginEdit);
+            this.dgvObiekty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvObiekty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObiekty_CellDoubleClick);
+            this.dgvObiekty.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObiekty_CellEndEdit);
+            this.dgvObiekty.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvObiekty_ColumnHeaderMouseDoubleClick);
             // 
             // fMenu
             // 
@@ -268,6 +289,7 @@ namespace Biznes_Menedżer
             this.tabObiekty.ResumeLayout(false);
             this.ObjectLayout.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObiekty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,11 +306,12 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.Panel showWindows;
         private System.Windows.Forms.TableLayoutPanel ObjectLayout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtWybrano;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnADD;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView dgvObiekty;
     }
 }
 
