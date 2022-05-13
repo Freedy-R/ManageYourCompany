@@ -13,7 +13,7 @@ namespace Biznes_Menedżer
 {
     public partial class fTowar : Form
     {
-        MySqlConnection connection = new MySqlConnection("server = localhost; user=root;database=sklep;port=3306;password=");
+        MySqlConnection connection = new MySqlConnection("server = 'localhost'; user='root';database='sklep';port=3306;password=");
         bool polaczony = false;
         int wybrano = 0;
         public fTowar()

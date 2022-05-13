@@ -68,10 +68,7 @@ namespace Biznes_Menedżer
             this.showWindows.Tag = f;
             f.Show();
         }
-        public void Updatefukncja(row, )
-        {
-
-        }
+        
 
         private void btnWorkers_Click(object sender, EventArgs e)
         {

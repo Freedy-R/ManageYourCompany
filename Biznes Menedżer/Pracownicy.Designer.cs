@@ -47,8 +47,8 @@ namespace Biznes_Menedżer
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnADD = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@ namespace Biznes_Menedżer
             this.W_SearchLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtSzukam = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.dgvPrzegladaj = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,7 +79,7 @@ namespace Biznes_Menedżer
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -122,7 +122,7 @@ namespace Biznes_Menedżer
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1645, 895);
+            this.tabControl1.Size = new System.Drawing.Size(2200, 895);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -132,7 +132,7 @@ namespace Biznes_Menedżer
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1637, 869);
+            this.tabPage1.Size = new System.Drawing.Size(2192, 869);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dodaj";
             // 
@@ -149,7 +149,7 @@ namespace Biznes_Menedżer
             this.W_AddLayout.Name = "W_AddLayout";
             this.W_AddLayout.RowCount = 1;
             this.W_AddLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.W_AddLayout.Size = new System.Drawing.Size(1631, 863);
+            this.W_AddLayout.Size = new System.Drawing.Size(2186, 863);
             this.W_AddLayout.TabIndex = 0;
             // 
             // groupBox1
@@ -160,7 +160,7 @@ namespace Biznes_Menedżer
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(815, 863);
+            this.groupBox1.Size = new System.Drawing.Size(1093, 863);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane podstawowe";
@@ -192,7 +192,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(809, 835);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1087, 835);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // textBox14
@@ -204,7 +204,7 @@ namespace Biznes_Menedżer
             this.textBox14.Margin = new System.Windows.Forms.Padding(0);
             this.textBox14.Multiline = true;
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(809, 93);
+            this.textBox14.Size = new System.Drawing.Size(1087, 93);
             this.textBox14.TabIndex = 0;
             this.textBox14.Text = "* Imie";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -218,7 +218,7 @@ namespace Biznes_Menedżer
             this.textBox15.Margin = new System.Windows.Forms.Padding(0);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(809, 93);
+            this.textBox15.Size = new System.Drawing.Size(1087, 93);
             this.textBox15.TabIndex = 1;
             this.textBox15.Text = "* Nazwisko";
             this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -232,7 +232,7 @@ namespace Biznes_Menedżer
             this.textBox16.Margin = new System.Windows.Forms.Padding(0);
             this.textBox16.Multiline = true;
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(809, 93);
+            this.textBox16.Size = new System.Drawing.Size(1087, 93);
             this.textBox16.TabIndex = 2;
             this.textBox16.Text = "* Miasto";
             this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -246,7 +246,7 @@ namespace Biznes_Menedżer
             this.textBox17.Margin = new System.Windows.Forms.Padding(0);
             this.textBox17.Multiline = true;
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(809, 93);
+            this.textBox17.Size = new System.Drawing.Size(1087, 93);
             this.textBox17.TabIndex = 3;
             this.textBox17.Text = "* Kraj urodzenia";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -268,18 +268,18 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(809, 93);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1087, 93);
             this.tableLayoutPanel8.TabIndex = 4;
             // 
             // textBox18
             // 
             this.textBox18.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox18.Location = new System.Drawing.Point(404, 46);
+            this.textBox18.Location = new System.Drawing.Point(543, 46);
             this.textBox18.Margin = new System.Windows.Forms.Padding(0);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(405, 47);
+            this.textBox18.Size = new System.Drawing.Size(544, 47);
             this.textBox18.TabIndex = 3;
             this.textBox18.Text = "* Data urodzenia";
             // 
@@ -291,7 +291,7 @@ namespace Biznes_Menedżer
             this.textBox19.Margin = new System.Windows.Forms.Padding(0);
             this.textBox19.Multiline = true;
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(404, 47);
+            this.textBox19.Size = new System.Drawing.Size(543, 47);
             this.textBox19.TabIndex = 2;
             this.textBox19.Text = "* Kod pocztowy";
             // 
@@ -299,11 +299,11 @@ namespace Biznes_Menedżer
             // 
             this.textBox20.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox20.Location = new System.Drawing.Point(404, 0);
+            this.textBox20.Location = new System.Drawing.Point(543, 0);
             this.textBox20.Margin = new System.Windows.Forms.Padding(0);
             this.textBox20.Multiline = true;
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(405, 46);
+            this.textBox20.Size = new System.Drawing.Size(544, 46);
             this.textBox20.TabIndex = 1;
             this.textBox20.Text = "* Płeć";
             // 
@@ -315,7 +315,7 @@ namespace Biznes_Menedżer
             this.textBox21.Margin = new System.Windows.Forms.Padding(0);
             this.textBox21.Multiline = true;
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(404, 46);
+            this.textBox21.Size = new System.Drawing.Size(543, 46);
             this.textBox21.TabIndex = 0;
             this.textBox21.Text = "* Adres";
             // 
@@ -326,7 +326,7 @@ namespace Biznes_Menedżer
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 785);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(803, 50);
+            this.label2.Size = new System.Drawing.Size(1081, 50);
             this.label2.TabIndex = 5;
             this.label2.Text = "* - Wymagane";
             // 
@@ -335,10 +335,10 @@ namespace Biznes_Menedżer
             this.groupBox2.Controls.Add(this.tableLayoutPanel9);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(815, 0);
+            this.groupBox2.Location = new System.Drawing.Point(1093, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(816, 863);
+            this.groupBox2.Size = new System.Drawing.Size(1093, 863);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane osobiste";
@@ -369,7 +369,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(810, 835);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1087, 835);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
             // tableLayoutPanel10
@@ -377,8 +377,8 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.button4, 1, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button5, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnADD, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnCancel, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 785);
@@ -386,34 +386,34 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(810, 50);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1087, 50);
             this.tableLayoutPanel10.TabIndex = 7;
             // 
-            // button4
+            // btnADD
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(405, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(405, 50);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Dodaj";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
+            this.btnADD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Location = new System.Drawing.Point(543, 0);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(0);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(544, 50);
+            this.btnADD.TabIndex = 1;
+            this.btnADD.Text = "Dodaj";
+            this.btnADD.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnCancel
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(405, 50);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Anuluj";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
+            this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(0, 0);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(543, 50);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Anuluj";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // textBox22
             // 
@@ -424,7 +424,7 @@ namespace Biznes_Menedżer
             this.textBox22.Margin = new System.Windows.Forms.Padding(0);
             this.textBox22.Multiline = true;
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(810, 93);
+            this.textBox22.Size = new System.Drawing.Size(1087, 93);
             this.textBox22.TabIndex = 2;
             this.textBox22.Text = "Email";
             this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -438,7 +438,7 @@ namespace Biznes_Menedżer
             this.textBox23.Margin = new System.Windows.Forms.Padding(0);
             this.textBox23.Multiline = true;
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(810, 93);
+            this.textBox23.Size = new System.Drawing.Size(1087, 93);
             this.textBox23.TabIndex = 3;
             this.textBox23.Text = "* Numer kontaktowy";
             this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -452,7 +452,7 @@ namespace Biznes_Menedżer
             this.textBox24.Margin = new System.Windows.Forms.Padding(0);
             this.textBox24.Multiline = true;
             this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(810, 93);
+            this.textBox24.Size = new System.Drawing.Size(1087, 93);
             this.textBox24.TabIndex = 4;
             this.textBox24.Text = "Stanowisko";
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -466,7 +466,7 @@ namespace Biznes_Menedżer
             this.textBox25.Margin = new System.Windows.Forms.Padding(0);
             this.textBox25.Multiline = true;
             this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(810, 93);
+            this.textBox25.Size = new System.Drawing.Size(1087, 93);
             this.textBox25.TabIndex = 5;
             this.textBox25.Text = "* Pesel";
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -485,7 +485,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(810, 93);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(1087, 93);
             this.tableLayoutPanel11.TabIndex = 6;
             // 
             // radioButton3
@@ -494,7 +494,7 @@ namespace Biznes_Menedżer
             this.radioButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton3.Location = new System.Drawing.Point(3, 3);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(399, 87);
+            this.radioButton3.Size = new System.Drawing.Size(537, 87);
             this.radioButton3.TabIndex = 0;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Obywatel Polski";
@@ -504,9 +504,9 @@ namespace Biznes_Menedżer
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton4.Location = new System.Drawing.Point(408, 3);
+            this.radioButton4.Location = new System.Drawing.Point(546, 3);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(399, 87);
+            this.radioButton4.Size = new System.Drawing.Size(538, 87);
             this.radioButton4.TabIndex = 1;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Cudzoziemiec";
@@ -519,7 +519,7 @@ namespace Biznes_Menedżer
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1637, 869);
+            this.tabPage2.Size = new System.Drawing.Size(2192, 869);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Przeglądaj";
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
@@ -539,7 +539,7 @@ namespace Biznes_Menedżer
             this.W_SearchLayout.RowCount = 2;
             this.W_SearchLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.W_SearchLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.W_SearchLayout.Size = new System.Drawing.Size(1631, 863);
+            this.W_SearchLayout.Size = new System.Drawing.Size(2186, 863);
             this.W_SearchLayout.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -548,7 +548,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.txtSzukam, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSearch, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -556,7 +556,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1631, 86);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2186, 86);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // txtSzukam
@@ -567,31 +567,32 @@ namespace Biznes_Menedżer
             this.txtSzukam.Margin = new System.Windows.Forms.Padding(0);
             this.txtSzukam.Multiline = true;
             this.txtSzukam.Name = "txtSzukam";
-            this.txtSzukam.Size = new System.Drawing.Size(1304, 86);
+            this.txtSzukam.Size = new System.Drawing.Size(1748, 86);
             this.txtSzukam.TabIndex = 0;
             this.txtSzukam.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1304, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(327, 86);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Szukaj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.btnSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(1748, 0);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(438, 86);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Szukaj";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvPrzegladaj
             // 
             this.dgvPrzegladaj.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvPrzegladaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrzegladaj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPrzegladaj.Location = new System.Drawing.Point(3, 89);
             this.dgvPrzegladaj.Name = "dgvPrzegladaj";
-            this.dgvPrzegladaj.Size = new System.Drawing.Size(1625, 771);
+            this.dgvPrzegladaj.Size = new System.Drawing.Size(2180, 771);
             this.dgvPrzegladaj.TabIndex = 1;
             // 
             // tabPage3
@@ -601,7 +602,7 @@ namespace Biznes_Menedżer
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1637, 869);
+            this.tabPage3.Size = new System.Drawing.Size(2192, 869);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modyfikuj";
             // 
@@ -618,7 +619,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(1631, 863);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(2186, 863);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
             // groupBox3
@@ -629,7 +630,7 @@ namespace Biznes_Menedżer
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(815, 863);
+            this.groupBox3.Size = new System.Drawing.Size(1093, 863);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dane podstawowe";
@@ -661,7 +662,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(809, 835);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1087, 835);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // textBox2
@@ -673,7 +674,7 @@ namespace Biznes_Menedżer
             this.textBox2.Margin = new System.Windows.Forms.Padding(0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(809, 93);
+            this.textBox2.Size = new System.Drawing.Size(1087, 93);
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = "* Imie";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -687,7 +688,7 @@ namespace Biznes_Menedżer
             this.textBox3.Margin = new System.Windows.Forms.Padding(0);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(809, 93);
+            this.textBox3.Size = new System.Drawing.Size(1087, 93);
             this.textBox3.TabIndex = 1;
             this.textBox3.Text = "* Nazwisko";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -701,7 +702,7 @@ namespace Biznes_Menedżer
             this.textBox4.Margin = new System.Windows.Forms.Padding(0);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(809, 93);
+            this.textBox4.Size = new System.Drawing.Size(1087, 93);
             this.textBox4.TabIndex = 2;
             this.textBox4.Text = "* Miasto";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -715,7 +716,7 @@ namespace Biznes_Menedżer
             this.textBox5.Margin = new System.Windows.Forms.Padding(0);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(809, 93);
+            this.textBox5.Size = new System.Drawing.Size(1087, 93);
             this.textBox5.TabIndex = 3;
             this.textBox5.Text = "* Kraj urodzenia";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -737,18 +738,18 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(809, 93);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1087, 93);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // textBox9
             // 
             this.textBox9.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox9.Location = new System.Drawing.Point(404, 46);
+            this.textBox9.Location = new System.Drawing.Point(543, 46);
             this.textBox9.Margin = new System.Windows.Forms.Padding(0);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(405, 47);
+            this.textBox9.Size = new System.Drawing.Size(544, 47);
             this.textBox9.TabIndex = 3;
             this.textBox9.Text = "* Data urodzenia";
             // 
@@ -760,7 +761,7 @@ namespace Biznes_Menedżer
             this.textBox8.Margin = new System.Windows.Forms.Padding(0);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(404, 47);
+            this.textBox8.Size = new System.Drawing.Size(543, 47);
             this.textBox8.TabIndex = 2;
             this.textBox8.Text = "* Kod pocztowy";
             // 
@@ -768,11 +769,11 @@ namespace Biznes_Menedżer
             // 
             this.textBox7.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox7.Location = new System.Drawing.Point(404, 0);
+            this.textBox7.Location = new System.Drawing.Point(543, 0);
             this.textBox7.Margin = new System.Windows.Forms.Padding(0);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(405, 46);
+            this.textBox7.Size = new System.Drawing.Size(544, 46);
             this.textBox7.TabIndex = 1;
             this.textBox7.Text = "* Płeć";
             // 
@@ -784,7 +785,7 @@ namespace Biznes_Menedżer
             this.textBox6.Margin = new System.Windows.Forms.Padding(0);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(404, 46);
+            this.textBox6.Size = new System.Drawing.Size(543, 46);
             this.textBox6.TabIndex = 0;
             this.textBox6.Text = "* Adres";
             // 
@@ -795,7 +796,7 @@ namespace Biznes_Menedżer
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 785);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(803, 50);
+            this.label1.Size = new System.Drawing.Size(1081, 50);
             this.label1.TabIndex = 5;
             this.label1.Text = "* - Wymagane";
             // 
@@ -804,10 +805,10 @@ namespace Biznes_Menedżer
             this.groupBox4.Controls.Add(this.tableLayoutPanel3);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox4.Location = new System.Drawing.Point(815, 0);
+            this.groupBox4.Location = new System.Drawing.Point(1093, 0);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(816, 863);
+            this.groupBox4.Size = new System.Drawing.Size(1093, 863);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dane osobiste";
@@ -838,7 +839,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(810, 835);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1087, 835);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -846,7 +847,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.button3, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnModify, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -855,21 +856,21 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(810, 50);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1087, 50);
             this.tableLayoutPanel6.TabIndex = 7;
             // 
-            // button3
+            // btnModify
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(405, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(405, 50);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Modyfikuj";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
+            this.btnModify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModify.Location = new System.Drawing.Point(543, 0);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(0);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(544, 50);
+            this.btnModify.TabIndex = 1;
+            this.btnModify.Text = "Modyfikuj";
+            this.btnModify.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -879,7 +880,7 @@ namespace Biznes_Menedżer
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(405, 50);
+            this.button2.Size = new System.Drawing.Size(543, 50);
             this.button2.TabIndex = 0;
             this.button2.Text = "Anuluj";
             this.button2.UseVisualStyleBackColor = false;
@@ -893,7 +894,7 @@ namespace Biznes_Menedżer
             this.textBox10.Margin = new System.Windows.Forms.Padding(0);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(810, 93);
+            this.textBox10.Size = new System.Drawing.Size(1087, 93);
             this.textBox10.TabIndex = 2;
             this.textBox10.Text = "Email";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -907,7 +908,7 @@ namespace Biznes_Menedżer
             this.textBox11.Margin = new System.Windows.Forms.Padding(0);
             this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(810, 93);
+            this.textBox11.Size = new System.Drawing.Size(1087, 93);
             this.textBox11.TabIndex = 3;
             this.textBox11.Text = "* Numer kontaktowy";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -921,7 +922,7 @@ namespace Biznes_Menedżer
             this.textBox12.Margin = new System.Windows.Forms.Padding(0);
             this.textBox12.Multiline = true;
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(810, 93);
+            this.textBox12.Size = new System.Drawing.Size(1087, 93);
             this.textBox12.TabIndex = 4;
             this.textBox12.Text = "Stanowisko";
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -935,7 +936,7 @@ namespace Biznes_Menedżer
             this.textBox13.Margin = new System.Windows.Forms.Padding(0);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(810, 93);
+            this.textBox13.Size = new System.Drawing.Size(1087, 93);
             this.textBox13.TabIndex = 5;
             this.textBox13.Text = "* Pesel";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -954,7 +955,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(810, 93);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1087, 93);
             this.tableLayoutPanel5.TabIndex = 6;
             // 
             // radioButton1
@@ -963,7 +964,7 @@ namespace Biznes_Menedżer
             this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButton1.Location = new System.Drawing.Point(3, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(399, 87);
+            this.radioButton1.Size = new System.Drawing.Size(537, 87);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Obywatel Polski";
@@ -973,9 +974,9 @@ namespace Biznes_Menedżer
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton2.Location = new System.Drawing.Point(408, 3);
+            this.radioButton2.Location = new System.Drawing.Point(546, 3);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(399, 87);
+            this.radioButton2.Size = new System.Drawing.Size(538, 87);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Cudzoziemiec";
@@ -986,7 +987,7 @@ namespace Biznes_Menedżer
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
-            this.ClientSize = new System.Drawing.Size(1645, 895);
+            this.ClientSize = new System.Drawing.Size(2200, 895);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fPracownicy";
@@ -1042,7 +1043,7 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.TableLayoutPanel W_SearchLayout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtSzukam;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox2;
@@ -1063,7 +1064,7 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TextBox textBox14;
@@ -1078,8 +1079,8 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnADD;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.TextBox textBox24;
