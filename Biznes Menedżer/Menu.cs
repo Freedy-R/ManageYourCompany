@@ -84,6 +84,25 @@ namespace Biznes_Menedżer
 
         }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (wybrano == 0)
+            {
+                MessageBox.Show("Nie wybrałeś obiektu, przejdź do zakładki obiekty i wybierz (Dwukrotne klikniecie na obiekt).");
+            }
+            else
+            {
+                tworzenie_pol();
+                MySqlCommand usuwanie = new MySqlCommand("DELETE FROM obiekty WHERE ID ="+wybrano+ "; DELETE FROM towar  WHERE ID_obiektu =" + wybrano+ "; DELETE FROM pracownicy  WHERE ID_obiektu =" + wybrano, connection);
+                usuwanie.ExecuteNonQuery();
+                niszczenie_pol();
+                MessageBox.Show("Usunięcie Udane");
+
+            }
+            ladowanie_bazy("Select * From obiekty");
+
+        }
+
         private void btnMagazine_Click(object sender, EventArgs e)
         {
             if (wybrano==0)
@@ -125,7 +144,7 @@ namespace Biznes_Menedżer
                 {
                     wybrano = Convert.ToInt32(wybrane.Cells[0].Value);
                     
-                    MessageBox.Show("Wybrałeś obiekt z ID: " + wybrano + kodP);
+                    MessageBox.Show("Wybrałeś obiekt z ID: " + wybrano);
                 }
                 rtxtWybrano.Text = "Wybrałeś Obiekt z ID: " + wybrano.ToString();
                 
@@ -141,9 +160,17 @@ namespace Biznes_Menedżer
             
         }
 
-        private void btnADD_Click(object sender, EventArgs e)
-        {
-            tworzenie_pol();
+        private void btnADD_Click(object sender, EventArgs e){
+
+
+            
+            DataGridViewRow wybrane = dgvObiekty.Rows[this.index];
+            adresd = wybrane.Cells[2].Value.ToString();
+            nazwaObiektud = wybrane.Cells[1].Value.ToString();
+            kodPd = wybrane.Cells[3].Value.ToString();
+            miejscowoscd = wybrane.Cells[4].Value.ToString();
+            telefond = wybrane.Cells[5].Value.ToString();
+            liczbaPracownikowd = wybrane.Cells[6].Value.ToString();
             MySqlCommand dodawanie = new MySqlCommand("INSERT INTO obiekty(Nazwa_obiektu, Adres, Kod_Pocztowy, Miejscowosc, Telefon, Liczba_pracownikow) VALUES('"+nazwaObiektud+"', '"+adresd+"', '"+kodPd+"', '"+miejscowoscd+"', '"+telefond+"', '"+liczbaPracownikowd+"')", connection);
             if (string.IsNullOrEmpty(nazwaObiektud) || string.IsNullOrEmpty(adresd) || string.IsNullOrEmpty(kodPd) || string.IsNullOrEmpty(miejscowoscd) || string.IsNullOrEmpty(telefond) || string.IsNullOrEmpty(liczbaPracownikowd))
             {
@@ -151,6 +178,7 @@ namespace Biznes_Menedżer
             }
             else
             {
+                tworzenie_pol();
                 dodawanie.ExecuteNonQuery();
                 niszczenie_pol();
                 MessageBox.Show("Udało ci się dodać dane do bazy danych.");
@@ -162,18 +190,8 @@ namespace Biznes_Menedżer
 
         private void dgvObiekty_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
-            {
-
-                index = e.RowIndex;
-                DataGridViewRow wybrane = dgvObiekty.Rows[index];
-                adresd = wybrane.Cells[2].Value.ToString();
-                nazwaObiektud = wybrane.Cells[1].Value.ToString();
-                kodPd = wybrane.Cells[3].Value.ToString();
-                miejscowoscd = wybrane.Cells[4].Value.ToString();
-                telefond = wybrane.Cells[5].Value.ToString();
-                liczbaPracownikowd = wybrane.Cells[6].Value.ToString();
-            }
+            index = e.RowIndex;
+            this.index = index;
         }
 
         private void dgvObiekty_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)

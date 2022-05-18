@@ -259,6 +259,7 @@ namespace Biznes_Menedżer
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Usuń";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // dgvObiekty
             // 
