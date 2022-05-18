@@ -36,7 +36,7 @@ namespace Biznes_Menedżer
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.cbStan = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNazwa = new System.Windows.Forms.TextBox();
             this.numCenaNetto = new System.Windows.Forms.NumericUpDown();
             this.numPodatek = new System.Windows.Forms.NumericUpDown();
             this.txtNrFaktury = new System.Windows.Forms.TextBox();
@@ -160,7 +160,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.Controls.Add(this.label19, 0, 8);
             this.tableLayoutPanel4.Controls.Add(this.label18, 0, 6);
             this.tableLayoutPanel4.Controls.Add(this.cbStan, 0, 11);
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtNazwa, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.numCenaNetto, 0, 9);
             this.tableLayoutPanel4.Controls.Add(this.numPodatek, 0, 7);
             this.tableLayoutPanel4.Controls.Add(this.txtNrFaktury, 0, 5);
@@ -230,17 +230,17 @@ namespace Biznes_Menedżer
             this.cbStan.Size = new System.Drawing.Size(961, 39);
             this.cbStan.TabIndex = 6;
             // 
-            // textBox1
+            // txtNazwa
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(0, 66);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(961, 38);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Nazwa";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNazwa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNazwa.Location = new System.Drawing.Point(0, 66);
+            this.txtNazwa.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNazwa.Name = "txtNazwa";
+            this.txtNazwa.Size = new System.Drawing.Size(961, 38);
+            this.txtNazwa.TabIndex = 0;
+            this.txtNazwa.Text = "Nazwa";
+            this.txtNazwa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numCenaNetto
             // 
@@ -617,6 +617,7 @@ namespace Biznes_Menedżer
             // 
             // tableLayoutPanel7
             // 
+            this.tableLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.label20, 0, 8);
@@ -802,6 +803,7 @@ namespace Biznes_Menedżer
             // 
             // tableLayoutPanel8
             // 
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -859,6 +861,7 @@ namespace Biznes_Menedżer
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(484, 0);
@@ -882,7 +885,7 @@ namespace Biznes_Menedżer
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -896,7 +899,7 @@ namespace Biznes_Menedżer
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -923,6 +926,7 @@ namespace Biznes_Menedżer
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(3, 0);
@@ -1010,7 +1014,7 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.DataGridView dgvPrzegladaj;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNazwa;
         private System.Windows.Forms.TextBox txtProducent;
         private System.Windows.Forms.TextBox txtNrFaktury;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;

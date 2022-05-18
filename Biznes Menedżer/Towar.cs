@@ -76,12 +76,24 @@ namespace Biznes_Menedżer
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            tworzenie_pol();
+            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(Nazwa, Ilosc, Producent, Nr_Faktury, Podatki_%, Cena_Netto, Stan) VALUES ('" + txtNazwa.Text + "','" + numIlosc.Text + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Text + "','" + numCenaNetto.Text + "','" + cbStan.Text + "')");
+            if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
+            {
+                MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
+            }
+            else
+            {
+                tworzenie_pol();
+                dodanie_towaru.ExecuteNonQuery();
+                niszczenie_pol();
+                MessageBox.Show("Pracownik został dodany do bazy.");
+            }
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            txtNazwa.Text = "";
             numIlosc.Text = "";
             txtProducent.Text = "";
             txtNrFaktury.Text = "";
