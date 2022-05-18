@@ -13,11 +13,13 @@ namespace Biznes_Menedżer
 {
     public partial class fTowar : Form
     {
-        MySqlConnection connection = new MySqlConnection("server = 'localhost'; user='root';database='sklep';port=3306;password=");
+        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
         bool polaczony = false;
-        int wybrano = 0;
-        public fTowar()
+        private int wybrano;
+        public fTowar(int wybrano)
         {
+
+            this.wybrano = wybrano;
             InitializeComponent();
         }
         public void tworzenie_pol()
@@ -51,7 +53,7 @@ namespace Biznes_Menedżer
             }
             catch (MySql.Data.MySqlClient.MySqlException e)
             {
-                MessageBox.Show("Wychodzi na to że masz błąd:\n " + e);
+                MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe.");
             }
         }
 
@@ -62,7 +64,7 @@ namespace Biznes_Menedżer
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            ladowanie_bazy("SELECT * FROM towar");
+            ladowanie_bazy("SELECT * FROM towar WHERE ID_obiektu =" + wybrano);
         }
 
         private void btnSzukaj_Click(object sender, EventArgs e)

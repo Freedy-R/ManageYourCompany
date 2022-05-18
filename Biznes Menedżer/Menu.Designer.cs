@@ -216,6 +216,7 @@ namespace Biznes_Menedżer
             this.btnADD.TabIndex = 3;
             this.btnADD.Text = "Dodaj";
             this.btnADD.UseVisualStyleBackColor = false;
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
             // 
             // btnModify
             // 
@@ -230,6 +231,7 @@ namespace Biznes_Menedżer
             this.btnModify.TabIndex = 2;
             this.btnModify.Text = "Zmodyfikuj";
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // rtxtWybrano
             // 

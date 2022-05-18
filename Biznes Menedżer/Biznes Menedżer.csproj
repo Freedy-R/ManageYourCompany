@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modyfikuj_obiekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modyfikuj_obiekt.Designer.cs">
+      <DependentUpon>modyfikuj_obiekt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modyfikuj_obiekt.resx">
+      <DependentUpon>modyfikuj_obiekt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pracownicy.resx">
       <DependentUpon>Pracownicy.cs</DependentUpon>

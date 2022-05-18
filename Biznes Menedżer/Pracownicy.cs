@@ -14,11 +14,12 @@ namespace Biznes_Menedżer
 {
     public partial class fPracownicy : Form
     {
-        MySqlConnection connection = new MySqlConnection("server = localhost; user=root;database=sklep;port=3306;password=");
+        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
         bool polaczony = false;
-        int wybrano = 0;
-        public fPracownicy()
+        private int wybrano;
+        public fPracownicy(int wybrano)
         {
+            this.wybrano = wybrano;
             InitializeComponent();
         }
 
@@ -57,13 +58,13 @@ namespace Biznes_Menedżer
             }
             catch (MySql.Data.MySqlClient.MySqlException e)
             {
-                MessageBox.Show("Wychodzi na to że masz błąd:\n " + e);
+                MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe.");
             }
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            ladowanie_bazy("SELECT * FROM pracownicy");
+            ladowanie_bazy("SELECT * FROM pracownicy WHERE ID_obiektu ="+wybrano);
         }
 
         private void button1_Click(object sender, EventArgs e)
