@@ -17,6 +17,7 @@ namespace Biznes_Menedżer
         MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
         bool polaczony = false;
         private int wybrano;
+        string pochodzenie;
         public fPracownicy(int wybrano)
         {
             this.wybrano = wybrano;
@@ -280,200 +281,226 @@ namespace Biznes_Menedżer
 
         private void Name2_Clear(object sender, EventArgs e)
         {
-            if (txtName2.Text == "* Imie")
+            if (txtImieP.Text == "* Imie")
             {
-                txtName2.Clear();
-                txtName2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtImieP.Clear();
+                txtImieP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Name2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName2.Text))
+            if (string.IsNullOrEmpty(txtImieP.Text))
             {
-                txtName2.Text = "* Imie";
-                txtName2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtImieP.Text = "* Imie";
+                txtImieP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Surname2_Clear(object sender, EventArgs e)
         {
-            if (txtSur2.Text == "* Nazwisko")
+            if (txtNazwiskoP.Text == "* Nazwisko")
             {
-                txtSur2.Clear();
-                txtSur2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNazwiskoP.Clear();
+                txtNazwiskoP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Surname2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSur2.Text))
+            if (string.IsNullOrEmpty(txtNazwiskoP.Text))
             {
-                txtSur2.Text = "* Nazwisko";
-                txtSur2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNazwiskoP.Text = "* Nazwisko";
+                txtNazwiskoP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void City2_Clear(object sender, EventArgs e)
         {
-            if (txtCity2.Text == "* Miasto")
+            if (txtMiastoP.Text == "* Miasto")
             {
-                txtCity2.Clear();
-                txtCity2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtMiastoP.Clear();
+                txtMiastoP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void City2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCity2.Text))
+            if (string.IsNullOrEmpty(txtMiastoP.Text))
             {
-                txtCity2.Text = "* Miasto";
-                txtCity2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtMiastoP.Text = "* Miasto";
+                txtMiastoP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Address2_Clear(object sender, EventArgs e)
         {
-            if (txtAddress2.Text == "* Adres")
+            if (txtAdresP.Text == "* Adres")
             {
-                txtAddress2.Clear();
-                txtAddress2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtAdresP.Clear();
+                txtAdresP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Address2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtAddress2.Text))
+            if (string.IsNullOrEmpty(txtAdresP.Text))
             {
-                txtAddress2.Text = "* Adres";
-                txtAddress2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtAdresP.Text = "* Adres";
+                txtAdresP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
-        private void Zipcode2_Clear(object sender, EventArgs e)
+        private void mastxtKodPocztowyP_Clear(object sender, EventArgs e)
         {
-            if (txtZipcode2.Text == "* Kod pocztowy")
+            if (mastxtKodPocztowyP.Text == "* Kod pocztowy")
             {
-                txtZipcode2.Clear();
-                txtZipcode2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                mastxtKodPocztowyP.Clear();
+                mastxtKodPocztowyP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
-        private void Zipcode2_Return(object sender, EventArgs e)
+        private void mastxtKodPocztowyP_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtZipcode2.Text))
+            if (string.IsNullOrEmpty(mastxtKodPocztowyP.Text))
             {
-                txtZipcode2.Text = "* Kod pocztowy";
-                txtZipcode2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                mastxtKodPocztowyP.Text = "* Kod pocztowy";
+                mastxtKodPocztowyP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Born2_Clear(object sender, EventArgs e)
         {
-            if (txtBorn2.Text == "* Data urodzenia")
+            if (txtDataUroP.Text == "* Data urodzenia")
             {
-                txtBorn2.Clear();
-                txtBorn2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtDataUroP.Clear();
+                txtDataUroP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Born2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBorn2.Text))
+            if (string.IsNullOrEmpty(txtDataUroP.Text))
             {
-                txtBorn2.Text = "* Data urodzenia";
-                txtBorn2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtDataUroP.Text = "* Data urodzenia";
+                txtDataUroP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Country2_Clear(object sender, EventArgs e)
         {
-            if (txtCountry2.Text == "* Kraj urodzenia")
+            if (txtKrajP.Text == "* Kraj urodzenia")
             {
-                txtCountry2.Clear();
-                txtCountry2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtKrajP.Clear();
+                txtKrajP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Country2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCountry2.Text))
+            if (string.IsNullOrEmpty(txtKrajP.Text))
             {
-                txtCountry2.Text = "* Kraj urodzenia";
-                txtCountry2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtKrajP.Text = "* Kraj urodzenia";
+                txtKrajP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
 
         private void Email2_Clear(object sender, EventArgs e)
         {
-            if (txtEmail2.Text == "Email")
+            if (txtEmailP.Text == "Email")
             {
-                txtEmail2.Clear();
-                txtEmail2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtEmailP.Clear();
+                txtEmailP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Email2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEmail2.Text))
+            if (string.IsNullOrEmpty(txtEmailP.Text))
             {
-                txtEmail2.Text = "Email";
-                txtEmail2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtEmailP.Text = "Email";
+                txtEmailP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Phone2_Clear(object sender, EventArgs e)
         {
-            if (txtPhone2.Text == "* Numer kontaktowy")
+            if (txtNumerP.Text == "* Numer kontaktowy")
             {
-                txtPhone2.Clear();
-                txtPhone2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNumerP.Clear();
+                txtNumerP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Phone2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPhone2.Text))
+            if (string.IsNullOrEmpty(txtNumerP.Text))
             {
-                txtPhone2.Text = "* Numer kontaktowy";
-                txtPhone2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNumerP.Text = "* Numer kontaktowy";
+                txtNumerP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Employment2_Clear(object sender, EventArgs e)
         {
-            if (txtEmplacement2.Text == "Stanowisko")
+            if (txtStanowiskoP.Text == "Stanowisko")
             {
-                txtEmplacement2.Clear();
-                txtEmplacement2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtStanowiskoP.Clear();
+                txtStanowiskoP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Employment2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEmplacement2.Text))
+            if (string.IsNullOrEmpty(txtStanowiskoP.Text))
             {
-                txtEmplacement2.Text = "Stanowisko";
-                txtEmplacement2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtStanowiskoP.Text = "Stanowisko";
+                txtStanowiskoP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void ID2_Clear(object sender, EventArgs e)
         {
-            if (txtID2.Text == "* Pesel")
+            if (txtPeselP.Text == "* Pesel")
             {
-                txtID2.Clear();
-                txtID2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtPeselP.Clear();
+                txtPeselP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void ID2_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtID2.Text))
+            if (string.IsNullOrEmpty(txtPeselP.Text))
             {
-                txtID2.Text = "* Pesel";
-                txtID2.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtPeselP.Text = "* Pesel";
+                txtPeselP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+            }
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            
+            tworzenie_pol();
+            if (radioObywatelstwoPol.Checked == true)
+            {
+                pochodzenie = "Polskie";
+            }
+            else if (radioObywatelstwoCudz.Checked == true)
+            {
+                pochodzenie = "Cudzoziemskie";
+            }
+            MySqlCommand dodanie = new MySqlCommand("INSERT INTO pracownicy (ID_obiektu, Imie, Nazwisko, Adres, Plec, Kod_Pocztowy, Data_Urodzenia, Kraj_Urodzenia, `E-mail`, Numer_Kontaktowy, Stanowisko, Pesel, Pochodzenie) Values('"+wybrano+"', '"+txtImieP.Text+"','"+txtNazwiskoP.Text+"','"+txtAdresP.Text+"','"+listboxPlecP.Items+"','"+ mastxtKodPocztowyP.Text+"','"+ DateTime.Parse(txtDataUroP.Text)+"','"+txtKrajP.Text+"','"+txtEmail.Text+"','"+txtNumerP.Text+"','"+txtStanowiskoP.Text+"','"+txtPeselP.Text+"','"+pochodzenie+ "'); UPDATE obiekty SET Liczba_pracownikow = Liczba_pracownikow+1 WHERE (SELECT COUNT(*) FROM pracownicy WHERE pracownicy.ID_obiektu = "+wybrano+") > Liczba_pracownikow", connection);
+            if (string.IsNullOrEmpty(txtImieP.Text) || string.IsNullOrEmpty(txtNazwiskoP.Text) || string.IsNullOrEmpty(txtAdresP.Text) || string.IsNullOrEmpty(listboxPlecP.Items.ToString()) || string.IsNullOrEmpty(mastxtKodPocztowyP.Text) || string.IsNullOrEmpty(txtDataUroP.Text) || string.IsNullOrEmpty(txtKrajP.Text) || string.IsNullOrEmpty(txtNumerP.Text) || string.IsNullOrEmpty(txtPeselP.Text) || pochodzenie == "")
+            {
+                MessageBox.Show("nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
+            }
+            else
+            {
+                tworzenie_pol();
+                dodanie.ExecuteNonQuery();
+                niszczenie_pol();
+                MessageBox.Show("Pracownik został dodany do bazy.");
             }
         }
     }
