@@ -81,6 +81,12 @@ namespace Biznes_Menedżer
 
         private void btnWyczysc_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            numIlosc.Text = "";
+            txtProducent.Text = "";
+            txtNrFaktury.Text = "";
+            numPodatek.Text = "";
+            numCenaNetto.Text = "";
         }
 
         private void numCena_ValueChanged(object sender, EventArgs e)
