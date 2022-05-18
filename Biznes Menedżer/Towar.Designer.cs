@@ -33,13 +33,21 @@ namespace Biznes_Menedżer
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbStan = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.numCenaNetto = new System.Windows.Forms.NumericUpDown();
             this.numPodatek = new System.Windows.Forms.NumericUpDown();
             this.txtNrFaktury = new System.Windows.Forms.TextBox();
             this.txtProducent = new System.Windows.Forms.TextBox();
             this.numIlosc = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnWyczysc = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -55,27 +63,7 @@ namespace Biznes_Menedżer
             this.txtSzukam = new System.Windows.Forms.TextBox();
             this.dgvPrzegladaj = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cbStan = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -88,6 +76,18 @@ namespace Biznes_Menedżer
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -102,11 +102,11 @@ namespace Biznes_Menedżer
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrzegladaj)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -136,6 +136,7 @@ namespace Biznes_Menedżer
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -168,7 +169,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.Controls.Add(this.label17, 0, 10);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 13;
@@ -185,8 +186,60 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(963, 868);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(961, 866);
             this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19.Location = new System.Drawing.Point(3, 528);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(955, 66);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Cena netto";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label18.Location = new System.Drawing.Point(3, 396);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(955, 66);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Podatki (%)";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbStan
+            // 
+            this.cbStan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbStan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbStan.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStan.FormattingEnabled = true;
+            this.cbStan.Items.AddRange(new object[] {
+            "W magazynie",
+            "Na półkach",
+            "W drodze"});
+            this.cbStan.Location = new System.Drawing.Point(0, 726);
+            this.cbStan.Margin = new System.Windows.Forms.Padding(0);
+            this.cbStan.Name = "cbStan";
+            this.cbStan.Size = new System.Drawing.Size(961, 39);
+            this.cbStan.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(0, 66);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(961, 38);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Nazwa";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numCenaNetto
             // 
@@ -201,7 +254,7 @@ namespace Biznes_Menedżer
             0,
             0});
             this.numCenaNetto.Name = "numCenaNetto";
-            this.numCenaNetto.Size = new System.Drawing.Size(963, 34);
+            this.numCenaNetto.Size = new System.Drawing.Size(961, 34);
             this.numCenaNetto.TabIndex = 10;
             this.numCenaNetto.ValueChanged += new System.EventHandler(this.numCenaNetto_ValueChanged);
             // 
@@ -213,7 +266,7 @@ namespace Biznes_Menedżer
             this.numPodatek.Location = new System.Drawing.Point(0, 462);
             this.numPodatek.Margin = new System.Windows.Forms.Padding(0);
             this.numPodatek.Name = "numPodatek";
-            this.numPodatek.Size = new System.Drawing.Size(963, 34);
+            this.numPodatek.Size = new System.Drawing.Size(961, 34);
             this.numPodatek.TabIndex = 9;
             this.numPodatek.ValueChanged += new System.EventHandler(this.numPodatek_ValueChanged);
             // 
@@ -225,7 +278,7 @@ namespace Biznes_Menedżer
             this.txtNrFaktury.Location = new System.Drawing.Point(0, 330);
             this.txtNrFaktury.Margin = new System.Windows.Forms.Padding(0);
             this.txtNrFaktury.Name = "txtNrFaktury";
-            this.txtNrFaktury.Size = new System.Drawing.Size(963, 31);
+            this.txtNrFaktury.Size = new System.Drawing.Size(961, 31);
             this.txtNrFaktury.TabIndex = 3;
             this.txtNrFaktury.Text = "Numer faktury";
             this.txtNrFaktury.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -238,7 +291,7 @@ namespace Biznes_Menedżer
             this.txtProducent.Location = new System.Drawing.Point(0, 264);
             this.txtProducent.Margin = new System.Windows.Forms.Padding(0);
             this.txtProducent.Name = "txtProducent";
-            this.txtProducent.Size = new System.Drawing.Size(963, 31);
+            this.txtProducent.Size = new System.Drawing.Size(961, 31);
             this.txtProducent.TabIndex = 2;
             this.txtProducent.Text = "Producent";
             this.txtProducent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -256,21 +309,33 @@ namespace Biznes_Menedżer
             0,
             0});
             this.numIlosc.Name = "numIlosc";
-            this.numIlosc.Size = new System.Drawing.Size(963, 34);
+            this.numIlosc.Size = new System.Drawing.Size(961, 34);
             this.numIlosc.TabIndex = 7;
             this.numIlosc.ValueChanged += new System.EventHandler(this.numCena_ValueChanged);
             // 
-            // textBox1
+            // label16
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(0, 66);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(963, 38);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Nazwa";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(3, 132);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(955, 66);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Ilość";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(3, 660);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(955, 66);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "Stan";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel5
             // 
@@ -290,7 +355,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5.Controls.Add(this.lblKpodatkow, 0, 5);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(963, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(963, 1);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 7;
@@ -301,8 +366,44 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(963, 868);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(962, 866);
             this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(484, 492);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(475, 123);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "-";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(484, 246);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(475, 123);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "-";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(484, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(475, 123);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "-";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -325,7 +426,7 @@ namespace Biznes_Menedżer
             this.btnWyczysc.Location = new System.Drawing.Point(0, 738);
             this.btnWyczysc.Margin = new System.Windows.Forms.Padding(0);
             this.btnWyczysc.Name = "btnWyczysc";
-            this.btnWyczysc.Size = new System.Drawing.Size(481, 130);
+            this.btnWyczysc.Size = new System.Drawing.Size(481, 128);
             this.btnWyczysc.TabIndex = 3;
             this.btnWyczysc.Text = "Wyczyść";
             this.btnWyczysc.UseVisualStyleBackColor = false;
@@ -340,7 +441,7 @@ namespace Biznes_Menedżer
             this.btnDodaj.Location = new System.Drawing.Point(481, 738);
             this.btnDodaj.Margin = new System.Windows.Forms.Padding(0);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(482, 130);
+            this.btnDodaj.Size = new System.Drawing.Size(481, 128);
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
@@ -491,44 +592,9 @@ namespace Biznes_Menedżer
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modyfikuj";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(484, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(476, 123);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "-";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(484, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(476, 123);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "-";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(484, 492);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(476, 123);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "-";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tableLayoutPanel6
             // 
+            this.tableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -543,6 +609,188 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(1926, 868);
             this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.label20, 0, 8);
+            this.tableLayoutPanel7.Controls.Add(this.label21, 0, 6);
+            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 0, 11);
+            this.tableLayoutPanel7.Controls.Add(this.textBox2, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.numericUpDown1, 0, 9);
+            this.tableLayoutPanel7.Controls.Add(this.numericUpDown2, 0, 7);
+            this.tableLayoutPanel7.Controls.Add(this.textBox3, 0, 5);
+            this.tableLayoutPanel7.Controls.Add(this.textBox4, 0, 4);
+            this.tableLayoutPanel7.Controls.Add(this.numericUpDown3, 0, 3);
+            this.tableLayoutPanel7.Controls.Add(this.label22, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.label23, 0, 10);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(1, 1);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 13;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(961, 866);
+            this.tableLayoutPanel7.TabIndex = 2;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label20.Location = new System.Drawing.Point(3, 528);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(955, 66);
+            this.label20.TabIndex = 14;
+            this.label20.Text = "Cena netto";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.Location = new System.Drawing.Point(3, 396);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(955, 66);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Podatki (%)";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "W magazynie",
+            "Na półkach",
+            "W drodze"});
+            this.comboBox1.Location = new System.Drawing.Point(0, 726);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(961, 39);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox2.Location = new System.Drawing.Point(0, 66);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(961, 38);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "Nazwa";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDown1.Location = new System.Drawing.Point(0, 594);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(961, 34);
+            this.numericUpDown1.TabIndex = 10;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDown2.Location = new System.Drawing.Point(0, 462);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(961, 34);
+            this.numericUpDown2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox3.Location = new System.Drawing.Point(0, 330);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(961, 31);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "Numer faktury";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox4.Location = new System.Drawing.Point(0, 264);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(961, 31);
+            this.textBox4.TabIndex = 2;
+            this.textBox4.Text = "Producent";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDown3.Location = new System.Drawing.Point(0, 198);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(961, 34);
+            this.numericUpDown3.TabIndex = 7;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label22.Location = new System.Drawing.Point(3, 132);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(955, 66);
+            this.label22.TabIndex = 11;
+            this.label22.Text = "Ilość";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label23.Location = new System.Drawing.Point(3, 660);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(955, 66);
+            this.label23.TabIndex = 15;
+            this.label23.Text = "Stan";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel8
             // 
@@ -562,7 +810,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.Controls.Add(this.label15, 0, 5);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(963, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(963, 1);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 7;
@@ -573,7 +821,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(963, 868);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(962, 866);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // label5
@@ -583,7 +831,7 @@ namespace Biznes_Menedżer
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(484, 492);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(476, 123);
+            this.label5.Size = new System.Drawing.Size(475, 123);
             this.label5.TabIndex = 12;
             this.label5.Text = "-";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -595,7 +843,7 @@ namespace Biznes_Menedżer
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(484, 246);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(476, 123);
+            this.label7.Size = new System.Drawing.Size(475, 123);
             this.label7.TabIndex = 10;
             this.label7.Text = "-";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -607,7 +855,7 @@ namespace Biznes_Menedżer
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(484, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(476, 123);
+            this.label9.Size = new System.Drawing.Size(475, 123);
             this.label9.TabIndex = 8;
             this.label9.Text = "-";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -633,7 +881,7 @@ namespace Biznes_Menedżer
             this.button1.Location = new System.Drawing.Point(0, 738);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(481, 130);
+            this.button1.Size = new System.Drawing.Size(481, 128);
             this.button1.TabIndex = 3;
             this.button1.Text = "Wyczyść";
             this.button1.UseVisualStyleBackColor = false;
@@ -647,7 +895,7 @@ namespace Biznes_Menedżer
             this.button2.Location = new System.Drawing.Point(481, 738);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(482, 130);
+            this.button2.Size = new System.Drawing.Size(481, 128);
             this.button2.TabIndex = 4;
             this.button2.Text = "Modyfikuj";
             this.button2.UseVisualStyleBackColor = false;
@@ -703,252 +951,6 @@ namespace Biznes_Menedżer
             this.label15.Size = new System.Drawing.Size(0, 39);
             this.label15.TabIndex = 7;
             // 
-            // cbStan
-            // 
-            this.cbStan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbStan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbStan.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbStan.FormattingEnabled = true;
-            this.cbStan.Items.AddRange(new object[] {
-            "W magazynie",
-            "Na półkach",
-            "W drodze"});
-            this.cbStan.Location = new System.Drawing.Point(0, 726);
-            this.cbStan.Margin = new System.Windows.Forms.Padding(0);
-            this.cbStan.Name = "cbStan";
-            this.cbStan.Size = new System.Drawing.Size(963, 39);
-            this.cbStan.TabIndex = 6;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(3, 132);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(957, 66);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "Ilość";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(3, 396);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(957, 66);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Podatki (%)";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19.Location = new System.Drawing.Point(3, 528);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(957, 66);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Cena netto";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(3, 660);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(957, 66);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Stan";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 1;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.label20, 0, 8);
-            this.tableLayoutPanel7.Controls.Add(this.label21, 0, 6);
-            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 0, 11);
-            this.tableLayoutPanel7.Controls.Add(this.textBox2, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.numericUpDown1, 0, 9);
-            this.tableLayoutPanel7.Controls.Add(this.numericUpDown2, 0, 7);
-            this.tableLayoutPanel7.Controls.Add(this.textBox3, 0, 5);
-            this.tableLayoutPanel7.Controls.Add(this.textBox4, 0, 4);
-            this.tableLayoutPanel7.Controls.Add(this.numericUpDown3, 0, 3);
-            this.tableLayoutPanel7.Controls.Add(this.label22, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label23, 0, 10);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 13;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(963, 868);
-            this.tableLayoutPanel7.TabIndex = 2;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label20.Location = new System.Drawing.Point(3, 528);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(957, 66);
-            this.label20.TabIndex = 14;
-            this.label20.Text = "Cena netto";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(3, 396);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(957, 66);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "Podatki (%)";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "W magazynie",
-            "Na półkach",
-            "W drodze"});
-            this.comboBox1.Location = new System.Drawing.Point(0, 726);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(963, 39);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(0, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(963, 38);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "Nazwa";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown1.Location = new System.Drawing.Point(0, 594);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(963, 34);
-            this.numericUpDown1.TabIndex = 10;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown2.Location = new System.Drawing.Point(0, 462);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(963, 34);
-            this.numericUpDown2.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(0, 330);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(963, 31);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "Numer faktury";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(0, 264);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(963, 31);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "Producent";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown3.Location = new System.Drawing.Point(0, 198);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(963, 34);
-            this.numericUpDown3.TabIndex = 7;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label22.Location = new System.Drawing.Point(3, 132);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(957, 66);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "Ilość";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label23.Location = new System.Drawing.Point(3, 660);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(957, 66);
-            this.label23.TabIndex = 15;
-            this.label23.Text = "Stan";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // fTowar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -976,13 +978,13 @@ namespace Biznes_Menedżer
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrzegladaj)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
