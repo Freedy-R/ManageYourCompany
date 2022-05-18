@@ -73,5 +73,41 @@ namespace Biznes_Menedżer
             string qwSzukam = "SELECT * FROM `towar` WHERE `ID` LIKE '%"+szukam+ "%' OR `ID_obiektu` LIKE '%" + szukam + "%' OR `Nazwa` LIKE '%" + szukam + "%' OR `Ilość` LIKE '%" + szukam + "%' OR `Producent` LIKE '%" + szukam + "%' OR `Nr.Faktury` LIKE '%" + szukam + "%' OR `Podatki_ %` LIKE '%" + szukam + "%' OR `Cena_Netto` LIKE '%" + szukam + "%' OR `Cena_Brutto` LIKE '%" + szukam + "%' OR `Stan` LIKE '%" + szukam + "%'";
             ladowanie_bazy(qwSzukam);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWyczysc_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void numCena_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void przeliczanie()
+        {
+            lblWartoscNetto.Text = numCenaNetto.Value.ToString();
+            lblKpodatkow.Text = (numCenaNetto.Value * (numPodatek.Value / 100)).ToString();
+            lblWartoscBrutto.Text = (numCenaNetto.Value + (numCenaNetto.Value * (numPodatek.Value / 100))).ToString();
+        }
+
+        private void tabPage1_Enter(object sender, EventArgs e)
+        {
+            przeliczanie();
+            
+        }
+
+        private void numPodatek_ValueChanged(object sender, EventArgs e)
+        {
+            przeliczanie();
+        }
+
+        private void numCenaNetto_ValueChanged(object sender, EventArgs e)
+        {
+            przeliczanie();
+        }
     }
 }
