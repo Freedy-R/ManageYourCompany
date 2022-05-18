@@ -154,6 +154,7 @@ namespace Biznes_Menedżer
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.label19, 0, 8);
@@ -256,6 +257,7 @@ namespace Biznes_Menedżer
             this.numCenaNetto.Name = "numCenaNetto";
             this.numCenaNetto.Size = new System.Drawing.Size(961, 34);
             this.numCenaNetto.TabIndex = 10;
+            this.numCenaNetto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numCenaNetto.ValueChanged += new System.EventHandler(this.numCenaNetto_ValueChanged);
             // 
             // numPodatek
@@ -268,6 +270,7 @@ namespace Biznes_Menedżer
             this.numPodatek.Name = "numPodatek";
             this.numPodatek.Size = new System.Drawing.Size(961, 34);
             this.numPodatek.TabIndex = 9;
+            this.numPodatek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numPodatek.ValueChanged += new System.EventHandler(this.numPodatek_ValueChanged);
             // 
             // txtNrFaktury
@@ -311,6 +314,7 @@ namespace Biznes_Menedżer
             this.numIlosc.Name = "numIlosc";
             this.numIlosc.Size = new System.Drawing.Size(961, 34);
             this.numIlosc.TabIndex = 7;
+            this.numIlosc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numIlosc.ValueChanged += new System.EventHandler(this.numCena_ValueChanged);
             // 
             // label16
@@ -339,6 +343,7 @@ namespace Biznes_Menedżer
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -419,7 +424,7 @@ namespace Biznes_Menedżer
             // 
             // btnWyczysc
             // 
-            this.btnWyczysc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.btnWyczysc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
             this.btnWyczysc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnWyczysc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWyczysc.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -434,7 +439,7 @@ namespace Biznes_Menedżer
             // 
             // btnDodaj
             // 
-            this.btnDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(181)))), ((int)(((byte)(190)))));
+            this.btnDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
             this.btnDodaj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -714,6 +719,7 @@ namespace Biznes_Menedżer
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(961, 34);
             this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numericUpDown2
             // 
@@ -725,6 +731,7 @@ namespace Biznes_Menedżer
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(961, 34);
             this.numericUpDown2.TabIndex = 9;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
@@ -767,6 +774,7 @@ namespace Biznes_Menedżer
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(961, 34);
             this.numericUpDown3.TabIndex = 7;
+            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
