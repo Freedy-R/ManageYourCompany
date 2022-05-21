@@ -82,7 +82,7 @@ namespace Biznes_Menedżer
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -450,7 +450,7 @@ namespace Biznes_Menedżer
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
-            this.btnDodaj.Click += new System.EventHandler(this.button2_Click);
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // label3
             // 
@@ -812,7 +812,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.Controls.Add(this.label9, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label10, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.button1, 0, 6);
-            this.tableLayoutPanel8.Controls.Add(this.button2, 1, 6);
+            this.tableLayoutPanel8.Controls.Add(this.btnModify, 1, 6);
             this.tableLayoutPanel8.Controls.Add(this.label11, 0, 4);
             this.tableLayoutPanel8.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.label13, 0, 1);
@@ -897,19 +897,20 @@ namespace Biznes_Menedżer
             this.button1.Text = "Wyczyść";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnModify
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(481, 738);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(481, 128);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Modyfikuj";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(194)))), ((int)(((byte)(251)))));
+            this.btnModify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModify.Location = new System.Drawing.Point(481, 738);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(0);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(481, 128);
+            this.btnModify.TabIndex = 4;
+            this.btnModify.Text = "Modyfikuj";
+            this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // label11
             // 
@@ -1039,7 +1040,7 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;

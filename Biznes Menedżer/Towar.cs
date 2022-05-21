@@ -70,25 +70,31 @@ namespace Biznes_Menedżer
         private void btnSzukaj_Click(object sender, EventArgs e)
         {
             string szukam = txtSzukam.Text;
-            string qwSzukam = "SELECT * FROM `towar` WHERE `ID` LIKE '%"+szukam+ "%' OR `ID_obiektu` LIKE '%" + szukam + "%' OR `Nazwa` LIKE '%" + szukam + "%' OR `Ilość` LIKE '%" + szukam + "%' OR `Producent` LIKE '%" + szukam + "%' OR `Nr.Faktury` LIKE '%" + szukam + "%' OR `Podatki_ %` LIKE '%" + szukam + "%' OR `Cena_Netto` LIKE '%" + szukam + "%' OR `Cena_Brutto` LIKE '%" + szukam + "%' OR `Stan` LIKE '%" + szukam + "%'";
+            string qwSzukam = "SELECT * FROM `towar` WHERE `ID` LIKE '%" + szukam + "%' OR `ID_obiektu` LIKE '%" + szukam + "%' OR `Nazwa` LIKE '%" + szukam + "%' OR `Ilość` LIKE '%" + szukam + "%' OR `Producent` LIKE '%" + szukam + "%' OR `Nr_Faktury` LIKE '%" + szukam + "%' OR `Podatki` LIKE '%" + szukam + "%' OR `Cena_Netto` LIKE '%" + szukam + "%' OR `Cena_Brutto` LIKE '%" + szukam + "%' OR `Stan` LIKE '%" + szukam + "%'";
             ladowanie_bazy(qwSzukam);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDodaj_Click(object sender, EventArgs e)
         {
             tworzenie_pol();
-            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(Nazwa, Ilosc, Producent, Nr_Faktury, Podatki_%, Cena_Netto, Stan) VALUES ('" + txtNazwa.Text + "','" + numIlosc.Text + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Text + "','" + numCenaNetto.Text + "','" + cbStan.Text + "')");
+            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(ID_Obiektu,Nazwa, Ilosc, Producent, Nr_Faktury, Podatki, Cena_Netto, Stan) " +
+                "VALUES" + "('"+this.wybrano+"','"+ txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
             if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
             {
                 MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
             }
             else
             {
-                tworzenie_pol();
                 dodanie_towaru.ExecuteNonQuery();
                 niszczenie_pol();
-                MessageBox.Show("Pracownik został dodany do bazy.");
+                MessageBox.Show("Towar został dodany do bazy.");
             }
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            tworzenie_pol();
+            MySqlCommand modyfikuj_towar = new MySqlCommand("ALTER TABLE towar");
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
@@ -115,7 +121,7 @@ namespace Biznes_Menedżer
         private void tabPage1_Enter(object sender, EventArgs e)
         {
             przeliczanie();
-            
+
         }
 
         private void numPodatek_ValueChanged(object sender, EventArgs e)
@@ -127,5 +133,7 @@ namespace Biznes_Menedżer
         {
             przeliczanie();
         }
+
+        
     }
 }

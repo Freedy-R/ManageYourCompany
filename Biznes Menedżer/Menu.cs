@@ -52,7 +52,7 @@ namespace Biznes_Menedżer
                     dgvObiekty.DataSource = ds.Tables[0];
                 }
             }
-            catch (MySql.Data.MySqlClient.MySqlException e)
+            catch (MySql.Data.MySqlClient.MySqlException)
             {
                 MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe lub zbyt duży ruch na serwerze odśwież karte (wyjdź wejdź)");
             }
