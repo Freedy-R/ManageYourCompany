@@ -114,11 +114,6 @@ namespace Biznes_Menedżer
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void tabObiekty_Enter(object sender, EventArgs e)
         {
           ladowanie_bazy("Select * From obiekty");
@@ -155,11 +150,6 @@ namespace Biznes_Menedżer
 
         }
 
-        private void dgvObiekty_CancelRowEdit(object sender, QuestionEventArgs e)
-        {
-            
-        }
-
         private void btnADD_Click(object sender, EventArgs e){
 
 
@@ -192,15 +182,6 @@ namespace Biznes_Menedżer
         {
             index = e.RowIndex;
             this.index = index;
-        }
-
-        private void dgvObiekty_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-        }
-
-        private void dgvObiekty_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
         }
 
         private void btnModify_Click(object sender, EventArgs e)

@@ -269,12 +269,8 @@ namespace Biznes_Menedżer
             this.dgvObiekty.Name = "dgvObiekty";
             this.dgvObiekty.Size = new System.Drawing.Size(1560, 687);
             this.dgvObiekty.TabIndex = 1;
-            this.dgvObiekty.CancelRowEdit += new System.Windows.Forms.QuestionEventHandler(this.dgvObiekty_CancelRowEdit);
-            this.dgvObiekty.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvObiekty_CellBeginEdit);
-            this.dgvObiekty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvObiekty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObiekty_CellDoubleClick);
             this.dgvObiekty.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObiekty_CellEndEdit);
-            this.dgvObiekty.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvObiekty_ColumnHeaderMouseDoubleClick);
             // 
             // fMenu
             // 
