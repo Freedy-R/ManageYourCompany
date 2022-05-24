@@ -15,11 +15,15 @@ namespace Biznes_Menedżer
     {
         MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
         bool polaczony = false;
-        private int wybrano;
+        private int wybranoO = 0;
+        private int wybrano = 0;
+        private int index;
+        DataGridViewRow wybrane;
+        string nazwa, ilosc, producent, nr_faktury, podatek, cenaNetto, cenaBrutto, stan;
         public fTowar(int wybrano)
         {
 
-            this.wybrano = wybrano;
+            this.wybranoO = wybrano;
             InitializeComponent();
         }
         public void tworzenie_pol()
@@ -57,14 +61,9 @@ namespace Biznes_Menedżer
             }
         }
 
-        private void dgvPrzegladaj_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            ladowanie_bazy("SELECT * FROM towar WHERE ID_obiektu =" + wybrano);
+            ladowanie_bazy("SELECT * FROM towar WHERE ID_obiektu =" + wybranoO);
         }
 
         private void btnSzukaj_Click(object sender, EventArgs e)
@@ -72,29 +71,6 @@ namespace Biznes_Menedżer
             string szukam = txtSzukam.Text;
             string qwSzukam = "SELECT * FROM `towar` WHERE `ID` LIKE '%" + szukam + "%' OR `ID_obiektu` LIKE '%" + szukam + "%' OR `Nazwa` LIKE '%" + szukam + "%' OR `Ilość` LIKE '%" + szukam + "%' OR `Producent` LIKE '%" + szukam + "%' OR `Nr_Faktury` LIKE '%" + szukam + "%' OR `Podatki` LIKE '%" + szukam + "%' OR `Cena_Netto` LIKE '%" + szukam + "%' OR `Cena_Brutto` LIKE '%" + szukam + "%' OR `Stan` LIKE '%" + szukam + "%'";
             ladowanie_bazy(qwSzukam);
-        }
-
-        private void btnDodaj_Click(object sender, EventArgs e)
-        {
-            tworzenie_pol();
-            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(ID_Obiektu,Nazwa, Ilosc, Producent, Nr_Faktury, Podatki, Cena_Netto, Stan) " +
-                "VALUES" + "('"+this.wybrano+"','"+ txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
-            if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
-            {
-                MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
-            }
-            else
-            {
-                dodanie_towaru.ExecuteNonQuery();
-                niszczenie_pol();
-                MessageBox.Show("Towar został dodany do bazy.");
-            }
-        }
-
-        private void btnModify_Click(object sender, EventArgs e)
-        {
-            tworzenie_pol();
-            MySqlCommand modyfikuj_towar = new MySqlCommand("ALTER TABLE towar");
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
@@ -134,6 +110,62 @@ namespace Biznes_Menedżer
             przeliczanie();
         }
 
-        
+
+        private void dgvPrzegladaj_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            this.index = index;
+        }
+        private void dgvPrzegladaj_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                index = e.RowIndex;
+                wybrane = dgvPrzegladaj.Rows[index];
+                if (wybrane.Cells[0].Value is System.DBNull || wybrane.Cells[0].Value is 0)
+                {
+                    MessageBox.Show("Błąd wybierz inne");
+                }
+                else
+                {
+                    wybrano = Convert.ToInt32(wybrane.Cells[0].Value);
+                    MessageBox.Show("Wybrałeś obiekt z ID: " + wybrano);
+                }
+            }
+        }
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            tworzenie_pol();
+            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(ID_Obiektu,Nazwa, Ilosc, Producent, Nr_Faktury, Podatki, Cena_Netto, Stan) " +
+                "VALUES" + "('" + this.wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
+            if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
+            {
+                MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
+            }
+            else
+            {
+                dodanie_towaru.ExecuteNonQuery();
+                niszczenie_pol();
+                MessageBox.Show("Towar został dodany do bazy.");
+            }
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            tworzenie_pol();
+            if (wybranoO == 0)
+            {
+                MessageBox.Show("Nie wybrałeś obiektu, przejdź do zakładki przeglądaj i wybierz (Dwukrotne klikniecie na towar).");
+            }
+            if (wybranoO > 0)
+            {
+                MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE towar SET Nazwa ='" + txtNazwaM.Text + "',Ilosc=" + numIloscM.Value + ",Producent='" + txtProducentM.Text 
+                    + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto='" + lblWartoscBrutto.Text 
+                    + "',Stan='"+ cbStanM.Text+"' WHERE ID ="+wybrano,connection);
+                modyfikuj_towar.ExecuteNonQuery();
+            }
+            
+        }
+
     }
 }

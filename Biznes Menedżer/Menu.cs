@@ -118,12 +118,15 @@ namespace Biznes_Menedżer
         {
           ladowanie_bazy("Select * From obiekty");
         }
-
+        private void dgvObiekty_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            this.index = index;
+        }
         private void dgvObiekty_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {
-
                 index = e.RowIndex;
                 DataGridViewRow wybrane = dgvObiekty.Rows[index];
                 adres= wybrane.Cells[2].Value.ToString();
@@ -141,19 +144,11 @@ namespace Biznes_Menedżer
                     
                     MessageBox.Show("Wybrałeś obiekt z ID: " + wybrano);
                 }
-                rtxtWybrano.Text = "Wybrałeś Obiekt z ID: " + wybrano.ToString();
-                
             }
-            
-            
-            
-
         }
 
         private void btnADD_Click(object sender, EventArgs e){
 
-
-            
             DataGridViewRow wybrane = dgvObiekty.Rows[this.index];
             adresd = wybrane.Cells[2].Value.ToString();
             nazwaObiektud = wybrane.Cells[1].Value.ToString();
@@ -176,12 +171,6 @@ namespace Biznes_Menedżer
             }
             ladowanie_bazy("Select * From obiekty");
 
-        }
-
-        private void dgvObiekty_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            index = e.RowIndex;
-            this.index = index;
         }
 
         private void btnModify_Click(object sender, EventArgs e)

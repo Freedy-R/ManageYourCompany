@@ -67,13 +67,13 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.cbStanM = new System.Windows.Forms.ComboBox();
+            this.txtNazwaM = new System.Windows.Forms.TextBox();
+            this.numCenaNettoM = new System.Windows.Forms.NumericUpDown();
+            this.numPodatekM = new System.Windows.Forms.NumericUpDown();
+            this.txtNr_FakturyM = new System.Windows.Forms.TextBox();
+            this.txtProducentM = new System.Windows.Forms.TextBox();
+            this.numIloscM = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
@@ -103,9 +103,9 @@ namespace Biznes_Menedżer
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCenaNettoM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPodatekM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIloscM)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -584,7 +584,8 @@ namespace Biznes_Menedżer
             this.dgvPrzegladaj.Name = "dgvPrzegladaj";
             this.dgvPrzegladaj.Size = new System.Drawing.Size(1920, 776);
             this.dgvPrzegladaj.TabIndex = 1;
-            this.dgvPrzegladaj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellContentClick);
+            this.dgvPrzegladaj.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellDoubleClick);
+            this.dgvPrzegladaj.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellEndEdit);
             // 
             // tabPage3
             // 
@@ -622,13 +623,13 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.label20, 0, 8);
             this.tableLayoutPanel7.Controls.Add(this.label21, 0, 6);
-            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 0, 11);
-            this.tableLayoutPanel7.Controls.Add(this.textBox2, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.numericUpDown1, 0, 9);
-            this.tableLayoutPanel7.Controls.Add(this.numericUpDown2, 0, 7);
-            this.tableLayoutPanel7.Controls.Add(this.textBox3, 0, 5);
-            this.tableLayoutPanel7.Controls.Add(this.textBox4, 0, 4);
-            this.tableLayoutPanel7.Controls.Add(this.numericUpDown3, 0, 3);
+            this.tableLayoutPanel7.Controls.Add(this.cbStanM, 0, 11);
+            this.tableLayoutPanel7.Controls.Add(this.txtNazwaM, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.numCenaNettoM, 0, 9);
+            this.tableLayoutPanel7.Controls.Add(this.numPodatekM, 0, 7);
+            this.tableLayoutPanel7.Controls.Add(this.txtNr_FakturyM, 0, 5);
+            this.tableLayoutPanel7.Controls.Add(this.txtProducentM, 0, 4);
+            this.tableLayoutPanel7.Controls.Add(this.numIloscM, 0, 3);
             this.tableLayoutPanel7.Controls.Add(this.label22, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.label23, 0, 10);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -677,105 +678,105 @@ namespace Biznes_Menedżer
             this.label21.Text = "Podatki (%)";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // cbStanM
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbStanM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbStanM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbStanM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStanM.FormattingEnabled = true;
+            this.cbStanM.Items.AddRange(new object[] {
             "W magazynie",
             "Na półkach",
             "W drodze"});
-            this.comboBox1.Location = new System.Drawing.Point(0, 726);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(961, 39);
-            this.comboBox1.TabIndex = 6;
+            this.cbStanM.Location = new System.Drawing.Point(0, 726);
+            this.cbStanM.Margin = new System.Windows.Forms.Padding(0);
+            this.cbStanM.Name = "cbStanM";
+            this.cbStanM.Size = new System.Drawing.Size(961, 39);
+            this.cbStanM.TabIndex = 6;
             // 
-            // textBox2
+            // txtNazwaM
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(0, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(961, 38);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "Nazwa";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNazwaM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNazwaM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNazwaM.Location = new System.Drawing.Point(0, 66);
+            this.txtNazwaM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNazwaM.Name = "txtNazwaM";
+            this.txtNazwaM.Size = new System.Drawing.Size(961, 38);
+            this.txtNazwaM.TabIndex = 0;
+            this.txtNazwaM.Text = "Nazwa";
+            this.txtNazwaM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown1
+            // numCenaNettoM
             // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown1.Location = new System.Drawing.Point(0, 594);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numCenaNettoM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numCenaNettoM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numCenaNettoM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numCenaNettoM.Location = new System.Drawing.Point(0, 594);
+            this.numCenaNettoM.Margin = new System.Windows.Forms.Padding(0);
+            this.numCenaNettoM.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(961, 34);
-            this.numericUpDown1.TabIndex = 10;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCenaNettoM.Name = "numCenaNettoM";
+            this.numCenaNettoM.Size = new System.Drawing.Size(961, 34);
+            this.numCenaNettoM.TabIndex = 10;
+            this.numCenaNettoM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown2
+            // numPodatekM
             // 
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown2.Location = new System.Drawing.Point(0, 462);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(961, 34);
-            this.numericUpDown2.TabIndex = 9;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numPodatekM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numPodatekM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numPodatekM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numPodatekM.Location = new System.Drawing.Point(0, 462);
+            this.numPodatekM.Margin = new System.Windows.Forms.Padding(0);
+            this.numPodatekM.Name = "numPodatekM";
+            this.numPodatekM.Size = new System.Drawing.Size(961, 34);
+            this.numPodatekM.TabIndex = 9;
+            this.numPodatekM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtNr_FakturyM
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox3.Location = new System.Drawing.Point(0, 330);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(961, 31);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "Numer faktury";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNr_FakturyM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNr_FakturyM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNr_FakturyM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNr_FakturyM.Location = new System.Drawing.Point(0, 330);
+            this.txtNr_FakturyM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNr_FakturyM.Name = "txtNr_FakturyM";
+            this.txtNr_FakturyM.Size = new System.Drawing.Size(961, 31);
+            this.txtNr_FakturyM.TabIndex = 3;
+            this.txtNr_FakturyM.Text = "Numer faktury";
+            this.txtNr_FakturyM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // txtProducentM
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(0, 264);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(961, 31);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "Producent";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProducentM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProducentM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProducentM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtProducentM.Location = new System.Drawing.Point(0, 264);
+            this.txtProducentM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtProducentM.Name = "txtProducentM";
+            this.txtProducentM.Size = new System.Drawing.Size(961, 31);
+            this.txtProducentM.TabIndex = 2;
+            this.txtProducentM.Text = "Producent";
+            this.txtProducentM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown3
+            // numIloscM
             // 
-            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown3.Location = new System.Drawing.Point(0, 198);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(0);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.numIloscM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numIloscM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numIloscM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numIloscM.Location = new System.Drawing.Point(0, 198);
+            this.numIloscM.Margin = new System.Windows.Forms.Padding(0);
+            this.numIloscM.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(961, 34);
-            this.numericUpDown3.TabIndex = 7;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numIloscM.Name = "numIloscM";
+            this.numIloscM.Size = new System.Drawing.Size(961, 34);
+            this.numIloscM.TabIndex = 7;
+            this.numIloscM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label22
             // 
@@ -993,9 +994,9 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCenaNettoM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPodatekM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIloscM)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
@@ -1054,13 +1055,13 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.ComboBox cbStanM;
+        private System.Windows.Forms.TextBox txtNazwaM;
+        private System.Windows.Forms.NumericUpDown numCenaNettoM;
+        private System.Windows.Forms.NumericUpDown numPodatekM;
+        private System.Windows.Forms.TextBox txtNr_FakturyM;
+        private System.Windows.Forms.TextBox txtProducentM;
+        private System.Windows.Forms.NumericUpDown numIloscM;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
     }
