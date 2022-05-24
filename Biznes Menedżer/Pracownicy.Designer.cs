@@ -41,6 +41,8 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.listboxPlecP = new System.Windows.Forms.ListBox();
             this.txtAdresP = new System.Windows.Forms.TextBox();
+            this.mastxtKodPocztowyP = new System.Windows.Forms.MaskedTextBox();
+            this.txtDataUroP = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,30 +66,28 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtSur = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtImiePM = new System.Windows.Forms.TextBox();
+            this.txtNazwiskoPM = new System.Windows.Forms.TextBox();
+            this.txtMiastoPM = new System.Windows.Forms.TextBox();
+            this.txtKrajUroPM = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtBorn = new System.Windows.Forms.TextBox();
-            this.txtZipcode = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.ListBox();
+            this.txtAdresPM = new System.Windows.Forms.TextBox();
+            this.txtPlecPM = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnModify = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtEmplacement = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtEmailPM = new System.Windows.Forms.TextBox();
+            this.txtNumerPM = new System.Windows.Forms.TextBox();
+            this.txtStanowiskoPM = new System.Windows.Forms.TextBox();
+            this.txtPeselPM = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.mastxtKodPocztowyP = new System.Windows.Forms.MaskedTextBox();
-            this.txtDataUroP = new System.Windows.Forms.MaskedTextBox();
+            this.radioObywatelstwoPolM = new System.Windows.Forms.RadioButton();
+            this.radioObywatelstwoCudzM = new System.Windows.Forms.RadioButton();
+            this.txtKodPocztowyPM = new System.Windows.Forms.MaskedTextBox();
+            this.txtDataUroPM = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.W_AddLayout.SuspendLayout();
@@ -264,10 +264,10 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.txtDataUroP, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.listboxPlecP, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtAdresP, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.mastxtKodPocztowyP, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.txtDataUroP, 1, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 599);
@@ -292,11 +292,11 @@ namespace Biznes_Menedżer
             this.listboxPlecP.Name = "listboxPlecP";
             this.listboxPlecP.Size = new System.Drawing.Size(479, 46);
             this.listboxPlecP.TabIndex = 5;
+            this.listboxPlecP.SelectedIndexChanged += new System.EventHandler(this.listboxPlecP_SelectedIndexChanged);
             // 
             // txtAdresP
             // 
             this.txtAdresP.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtAdresP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAdresP.Location = new System.Drawing.Point(0, 0);
             this.txtAdresP.Margin = new System.Windows.Forms.Padding(0);
             this.txtAdresP.Multiline = true;
@@ -306,6 +306,25 @@ namespace Biznes_Menedżer
             this.txtAdresP.Text = "* Adres";
             this.txtAdresP.Enter += new System.EventHandler(this.Address2_Clear);
             this.txtAdresP.Leave += new System.EventHandler(this.Address2_Return);
+            // 
+            // mastxtKodPocztowyP
+            // 
+            this.mastxtKodPocztowyP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mastxtKodPocztowyP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mastxtKodPocztowyP.Location = new System.Drawing.Point(3, 49);
+            this.mastxtKodPocztowyP.Mask = "00-000";
+            this.mastxtKodPocztowyP.Name = "mastxtKodPocztowyP";
+            this.mastxtKodPocztowyP.Size = new System.Drawing.Size(472, 38);
+            this.mastxtKodPocztowyP.TabIndex = 6;
+            // 
+            // txtDataUroP
+            // 
+            this.txtDataUroP.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDataUroP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDataUroP.Location = new System.Drawing.Point(481, 49);
+            this.txtDataUroP.Name = "txtDataUroP";
+            this.txtDataUroP.Size = new System.Drawing.Size(473, 29);
+            this.txtDataUroP.TabIndex = 6;
             // 
             // label2
             // 
@@ -521,6 +540,7 @@ namespace Biznes_Menedżer
             this.tabPage2.Size = new System.Drawing.Size(1932, 869);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Przeglądaj";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // W_SearchLayout
@@ -586,13 +606,22 @@ namespace Biznes_Menedżer
             // 
             // dgvPrzegladaj
             // 
+            this.dgvPrzegladaj.AllowUserToAddRows = false;
+            this.dgvPrzegladaj.AllowUserToDeleteRows = false;
             this.dgvPrzegladaj.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvPrzegladaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrzegladaj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPrzegladaj.Location = new System.Drawing.Point(3, 89);
+            this.dgvPrzegladaj.MultiSelect = false;
             this.dgvPrzegladaj.Name = "dgvPrzegladaj";
+            this.dgvPrzegladaj.ReadOnly = true;
             this.dgvPrzegladaj.Size = new System.Drawing.Size(1920, 771);
             this.dgvPrzegladaj.TabIndex = 1;
+            this.dgvPrzegladaj.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellClick);
+            this.dgvPrzegladaj.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellDoubleClick);
+            this.dgvPrzegladaj.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellEnter);
+            this.dgvPrzegladaj.Enter += new System.EventHandler(this.dgvPrzegladaj_Enter);
+            this.dgvPrzegladaj.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dgvPrzegladaj_PreviewKeyDown);
             // 
             // tabPage3
             // 
@@ -604,6 +633,7 @@ namespace Biznes_Menedżer
             this.tabPage3.Size = new System.Drawing.Size(1932, 869);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modyfikuj";
+            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // tableLayoutPanel16
             // 
@@ -639,10 +669,10 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.txtName, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtSur, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtCity, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.txtCountry, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.txtImiePM, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtNazwiskoPM, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txtMiastoPM, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtKrajUroPM, 0, 8);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 9);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -664,79 +694,79 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel2.Size = new System.Drawing.Size(957, 835);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // txtName
+            // txtImiePM
             // 
-            this.txtName.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.Location = new System.Drawing.Point(0, 41);
-            this.txtName.Margin = new System.Windows.Forms.Padding(0);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(957, 93);
-            this.txtName.TabIndex = 0;
-            this.txtName.Text = "* Imie";
-            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtName.Enter += new System.EventHandler(this.Name_Clear);
-            this.txtName.Leave += new System.EventHandler(this.Name_Return);
+            this.txtImiePM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtImiePM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtImiePM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtImiePM.Location = new System.Drawing.Point(0, 41);
+            this.txtImiePM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtImiePM.Multiline = true;
+            this.txtImiePM.Name = "txtImiePM";
+            this.txtImiePM.Size = new System.Drawing.Size(957, 93);
+            this.txtImiePM.TabIndex = 0;
+            this.txtImiePM.Text = "* Imie";
+            this.txtImiePM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtImiePM.Enter += new System.EventHandler(this.Name_Clear);
+            this.txtImiePM.Leave += new System.EventHandler(this.Name_Return);
             // 
-            // txtSur
+            // txtNazwiskoPM
             // 
-            this.txtSur.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtSur.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSur.Location = new System.Drawing.Point(0, 227);
-            this.txtSur.Margin = new System.Windows.Forms.Padding(0);
-            this.txtSur.Multiline = true;
-            this.txtSur.Name = "txtSur";
-            this.txtSur.Size = new System.Drawing.Size(957, 93);
-            this.txtSur.TabIndex = 1;
-            this.txtSur.Text = "* Nazwisko";
-            this.txtSur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSur.Enter += new System.EventHandler(this.Surname_Clear);
-            this.txtSur.Leave += new System.EventHandler(this.Surname_Return);
+            this.txtNazwiskoPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtNazwiskoPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNazwiskoPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNazwiskoPM.Location = new System.Drawing.Point(0, 227);
+            this.txtNazwiskoPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNazwiskoPM.Multiline = true;
+            this.txtNazwiskoPM.Name = "txtNazwiskoPM";
+            this.txtNazwiskoPM.Size = new System.Drawing.Size(957, 93);
+            this.txtNazwiskoPM.TabIndex = 1;
+            this.txtNazwiskoPM.Text = "* Nazwisko";
+            this.txtNazwiskoPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNazwiskoPM.Enter += new System.EventHandler(this.Surname_Clear);
+            this.txtNazwiskoPM.Leave += new System.EventHandler(this.Surname_Return);
             // 
-            // txtCity
+            // txtMiastoPM
             // 
-            this.txtCity.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCity.Location = new System.Drawing.Point(0, 413);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCity.Multiline = true;
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(957, 93);
-            this.txtCity.TabIndex = 2;
-            this.txtCity.Text = "* Miasto";
-            this.txtCity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCity.Enter += new System.EventHandler(this.City_Clear);
-            this.txtCity.Leave += new System.EventHandler(this.City_Return);
+            this.txtMiastoPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtMiastoPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMiastoPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMiastoPM.Location = new System.Drawing.Point(0, 413);
+            this.txtMiastoPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtMiastoPM.Multiline = true;
+            this.txtMiastoPM.Name = "txtMiastoPM";
+            this.txtMiastoPM.Size = new System.Drawing.Size(957, 93);
+            this.txtMiastoPM.TabIndex = 2;
+            this.txtMiastoPM.Text = "* Miasto";
+            this.txtMiastoPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMiastoPM.Enter += new System.EventHandler(this.City_Clear);
+            this.txtMiastoPM.Leave += new System.EventHandler(this.City_Return);
             // 
-            // txtCountry
+            // txtKrajUroPM
             // 
-            this.txtCountry.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtCountry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCountry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCountry.Location = new System.Drawing.Point(0, 692);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(0);
-            this.txtCountry.Multiline = true;
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(957, 93);
-            this.txtCountry.TabIndex = 3;
-            this.txtCountry.Text = "* Kraj urodzenia";
-            this.txtCountry.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCountry.Enter += new System.EventHandler(this.Country_Clear);
-            this.txtCountry.Leave += new System.EventHandler(this.Country_Return);
+            this.txtKrajUroPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtKrajUroPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKrajUroPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKrajUroPM.Location = new System.Drawing.Point(0, 692);
+            this.txtKrajUroPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtKrajUroPM.Multiline = true;
+            this.txtKrajUroPM.Name = "txtKrajUroPM";
+            this.txtKrajUroPM.Size = new System.Drawing.Size(957, 93);
+            this.txtKrajUroPM.TabIndex = 3;
+            this.txtKrajUroPM.Text = "* Kraj urodzenia";
+            this.txtKrajUroPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtKrajUroPM.Enter += new System.EventHandler(this.Country_Clear);
+            this.txtKrajUroPM.Leave += new System.EventHandler(this.Country_Return);
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.txtBorn, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txtZipcode, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txtAddress, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtGender, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtDataUroPM, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtKodPocztowyPM, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtAdresPM, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtPlecPM, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 599);
@@ -748,62 +778,33 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.Size = new System.Drawing.Size(957, 93);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // txtBorn
+            // txtAdresPM
             // 
-            this.txtBorn.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtBorn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBorn.Location = new System.Drawing.Point(478, 46);
-            this.txtBorn.Margin = new System.Windows.Forms.Padding(0);
-            this.txtBorn.Multiline = true;
-            this.txtBorn.Name = "txtBorn";
-            this.txtBorn.Size = new System.Drawing.Size(479, 47);
-            this.txtBorn.TabIndex = 3;
-            this.txtBorn.Text = "* Data urodzenia";
-            this.txtBorn.Enter += new System.EventHandler(this.Born_Clear);
-            this.txtBorn.Leave += new System.EventHandler(this.Born_Return);
+            this.txtAdresPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtAdresPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAdresPM.Location = new System.Drawing.Point(0, 0);
+            this.txtAdresPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtAdresPM.Multiline = true;
+            this.txtAdresPM.Name = "txtAdresPM";
+            this.txtAdresPM.Size = new System.Drawing.Size(478, 46);
+            this.txtAdresPM.TabIndex = 0;
+            this.txtAdresPM.Text = "* Adres";
+            this.txtAdresPM.Enter += new System.EventHandler(this.Address_Clear);
+            this.txtAdresPM.Leave += new System.EventHandler(this.Address_Return);
             // 
-            // txtZipcode
+            // txtPlecPM
             // 
-            this.txtZipcode.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtZipcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtZipcode.Location = new System.Drawing.Point(0, 46);
-            this.txtZipcode.Margin = new System.Windows.Forms.Padding(0);
-            this.txtZipcode.MaxLength = 5;
-            this.txtZipcode.Multiline = true;
-            this.txtZipcode.Name = "txtZipcode";
-            this.txtZipcode.Size = new System.Drawing.Size(478, 47);
-            this.txtZipcode.TabIndex = 2;
-            this.txtZipcode.Text = "* Kod pocztowy";
-            this.txtZipcode.Enter += new System.EventHandler(this.Zipcode_Clear);
-            this.txtZipcode.Leave += new System.EventHandler(this.Zipcode_Return);
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress.Location = new System.Drawing.Point(0, 0);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(0);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(478, 46);
-            this.txtAddress.TabIndex = 0;
-            this.txtAddress.Text = "* Adres";
-            this.txtAddress.Enter += new System.EventHandler(this.Address_Clear);
-            this.txtAddress.Leave += new System.EventHandler(this.Address_Return);
-            // 
-            // txtGender
-            // 
-            this.txtGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGender.FormattingEnabled = true;
-            this.txtGender.ItemHeight = 24;
-            this.txtGender.Items.AddRange(new object[] {
+            this.txtPlecPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlecPM.FormattingEnabled = true;
+            this.txtPlecPM.ItemHeight = 24;
+            this.txtPlecPM.Items.AddRange(new object[] {
             "Mężczyzna",
             "Kobieta"});
-            this.txtGender.Location = new System.Drawing.Point(478, 0);
-            this.txtGender.Margin = new System.Windows.Forms.Padding(0);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(479, 46);
-            this.txtGender.TabIndex = 4;
+            this.txtPlecPM.Location = new System.Drawing.Point(478, 0);
+            this.txtPlecPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPlecPM.Name = "txtPlecPM";
+            this.txtPlecPM.Size = new System.Drawing.Size(479, 46);
+            this.txtPlecPM.TabIndex = 4;
             // 
             // label1
             // 
@@ -814,7 +815,7 @@ namespace Biznes_Menedżer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(951, 50);
             this.label1.TabIndex = 5;
-            this.label1.Text = "* - Wymagane";
+            this.label1.Text = "* - Wymagane\r\n\r\n";
             // 
             // groupBox4
             // 
@@ -835,10 +836,10 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 9);
-            this.tableLayoutPanel3.Controls.Add(this.txtEmail, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.txtPhone, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.txtEmplacement, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.txtID, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.txtEmailPM, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtNumerPM, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txtStanowiskoPM, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.txtPeselPM, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 8);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -887,6 +888,7 @@ namespace Biznes_Menedżer
             this.btnModify.TabIndex = 1;
             this.btnModify.Text = "Modyfikuj";
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // button2
             // 
@@ -901,79 +903,79 @@ namespace Biznes_Menedżer
             this.button2.Text = "Anuluj";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // txtEmail
+            // txtEmailPM
             // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmail.Location = new System.Drawing.Point(0, 41);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(0);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(957, 93);
-            this.txtEmail.TabIndex = 2;
-            this.txtEmail.Text = "Email";
-            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEmail.Enter += new System.EventHandler(this.Email_Clear);
-            this.txtEmail.Leave += new System.EventHandler(this.Email_Return);
+            this.txtEmailPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEmailPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmailPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmailPM.Location = new System.Drawing.Point(0, 41);
+            this.txtEmailPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtEmailPM.Multiline = true;
+            this.txtEmailPM.Name = "txtEmailPM";
+            this.txtEmailPM.Size = new System.Drawing.Size(957, 93);
+            this.txtEmailPM.TabIndex = 2;
+            this.txtEmailPM.Text = "Email";
+            this.txtEmailPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmailPM.Enter += new System.EventHandler(this.Email_Clear);
+            this.txtEmailPM.Leave += new System.EventHandler(this.Email_Return);
             // 
-            // txtPhone
+            // txtNumerPM
             // 
-            this.txtPhone.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPhone.Location = new System.Drawing.Point(0, 227);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPhone.MaxLength = 9;
-            this.txtPhone.Multiline = true;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(957, 93);
-            this.txtPhone.TabIndex = 3;
-            this.txtPhone.Text = "* Numer kontaktowy";
-            this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPhone.Enter += new System.EventHandler(this.Phone_Clear);
-            this.txtPhone.Leave += new System.EventHandler(this.Phone_Return);
+            this.txtNumerPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtNumerPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumerPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNumerPM.Location = new System.Drawing.Point(0, 227);
+            this.txtNumerPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtNumerPM.MaxLength = 9;
+            this.txtNumerPM.Multiline = true;
+            this.txtNumerPM.Name = "txtNumerPM";
+            this.txtNumerPM.Size = new System.Drawing.Size(957, 93);
+            this.txtNumerPM.TabIndex = 3;
+            this.txtNumerPM.Text = "* Numer kontaktowy";
+            this.txtNumerPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumerPM.Enter += new System.EventHandler(this.Phone_Clear);
+            this.txtNumerPM.Leave += new System.EventHandler(this.Phone_Return);
             // 
-            // txtEmplacement
+            // txtStanowiskoPM
             // 
-            this.txtEmplacement.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtEmplacement.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmplacement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmplacement.Location = new System.Drawing.Point(0, 413);
-            this.txtEmplacement.Margin = new System.Windows.Forms.Padding(0);
-            this.txtEmplacement.Multiline = true;
-            this.txtEmplacement.Name = "txtEmplacement";
-            this.txtEmplacement.Size = new System.Drawing.Size(957, 93);
-            this.txtEmplacement.TabIndex = 4;
-            this.txtEmplacement.Text = "Stanowisko";
-            this.txtEmplacement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEmplacement.Enter += new System.EventHandler(this.Employment_Clear);
-            this.txtEmplacement.Leave += new System.EventHandler(this.Employment_Return);
+            this.txtStanowiskoPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtStanowiskoPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStanowiskoPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStanowiskoPM.Location = new System.Drawing.Point(0, 413);
+            this.txtStanowiskoPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtStanowiskoPM.Multiline = true;
+            this.txtStanowiskoPM.Name = "txtStanowiskoPM";
+            this.txtStanowiskoPM.Size = new System.Drawing.Size(957, 93);
+            this.txtStanowiskoPM.TabIndex = 4;
+            this.txtStanowiskoPM.Text = "Stanowisko";
+            this.txtStanowiskoPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStanowiskoPM.Enter += new System.EventHandler(this.Employment_Clear);
+            this.txtStanowiskoPM.Leave += new System.EventHandler(this.Employment_Return);
             // 
-            // txtID
+            // txtPeselPM
             // 
-            this.txtID.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtID.Location = new System.Drawing.Point(0, 599);
-            this.txtID.Margin = new System.Windows.Forms.Padding(0);
-            this.txtID.MaxLength = 11;
-            this.txtID.Multiline = true;
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(957, 93);
-            this.txtID.TabIndex = 5;
-            this.txtID.Text = "* Pesel";
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtID.Enter += new System.EventHandler(this.ID_Clear);
-            this.txtID.Leave += new System.EventHandler(this.ID_Return);
+            this.txtPeselPM.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtPeselPM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPeselPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPeselPM.Location = new System.Drawing.Point(0, 599);
+            this.txtPeselPM.Margin = new System.Windows.Forms.Padding(0);
+            this.txtPeselPM.MaxLength = 11;
+            this.txtPeselPM.Multiline = true;
+            this.txtPeselPM.Name = "txtPeselPM";
+            this.txtPeselPM.Size = new System.Drawing.Size(957, 93);
+            this.txtPeselPM.TabIndex = 5;
+            this.txtPeselPM.Text = "* Pesel";
+            this.txtPeselPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPeselPM.Enter += new System.EventHandler(this.ID_Clear);
+            this.txtPeselPM.Leave += new System.EventHandler(this.ID_Return);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.radioButton1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.radioButton2, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.radioObywatelstwoPolM, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.radioObywatelstwoCudzM, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 692);
@@ -984,47 +986,48 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5.Size = new System.Drawing.Size(957, 93);
             this.tableLayoutPanel5.TabIndex = 6;
             // 
-            // radioButton1
+            // radioObywatelstwoPolM
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(472, 87);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Obywatel Polski";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioObywatelstwoPolM.AutoSize = true;
+            this.radioObywatelstwoPolM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioObywatelstwoPolM.Location = new System.Drawing.Point(3, 3);
+            this.radioObywatelstwoPolM.Name = "radioObywatelstwoPolM";
+            this.radioObywatelstwoPolM.Size = new System.Drawing.Size(472, 87);
+            this.radioObywatelstwoPolM.TabIndex = 0;
+            this.radioObywatelstwoPolM.TabStop = true;
+            this.radioObywatelstwoPolM.Text = "Obywatel Polski";
+            this.radioObywatelstwoPolM.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioObywatelstwoCudzM
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton2.Location = new System.Drawing.Point(481, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(473, 87);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Cudzoziemiec";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioObywatelstwoCudzM.AutoSize = true;
+            this.radioObywatelstwoCudzM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioObywatelstwoCudzM.Location = new System.Drawing.Point(481, 3);
+            this.radioObywatelstwoCudzM.Name = "radioObywatelstwoCudzM";
+            this.radioObywatelstwoCudzM.Size = new System.Drawing.Size(473, 87);
+            this.radioObywatelstwoCudzM.TabIndex = 1;
+            this.radioObywatelstwoCudzM.TabStop = true;
+            this.radioObywatelstwoCudzM.Text = "Cudzoziemiec";
+            this.radioObywatelstwoCudzM.UseVisualStyleBackColor = true;
             // 
-            // mastxtKodPocztowyP
+            // txtKodPocztowyPM
             // 
-            this.mastxtKodPocztowyP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.mastxtKodPocztowyP.Location = new System.Drawing.Point(3, 49);
-            this.mastxtKodPocztowyP.Mask = "00-000";
-            this.mastxtKodPocztowyP.Name = "mastxtKodPocztowyP";
-            this.mastxtKodPocztowyP.Size = new System.Drawing.Size(472, 38);
-            this.mastxtKodPocztowyP.TabIndex = 6;
+            this.txtKodPocztowyPM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtKodPocztowyPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtKodPocztowyPM.Location = new System.Drawing.Point(3, 49);
+            this.txtKodPocztowyPM.Mask = "00-000";
+            this.txtKodPocztowyPM.Name = "txtKodPocztowyPM";
+            this.txtKodPocztowyPM.Size = new System.Drawing.Size(472, 38);
+            this.txtKodPocztowyPM.TabIndex = 7;
             // 
-            // txtDataUroP
+            // txtDataUroPM
             // 
-            this.txtDataUroP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataUroP.Location = new System.Drawing.Point(481, 49);
-            this.txtDataUroP.Mask = "0000-00-00";
-            this.txtDataUroP.Name = "txtDataUroP";
-            this.txtDataUroP.Size = new System.Drawing.Size(472, 38);
-            this.txtDataUroP.TabIndex = 7;
+            this.txtDataUroPM.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDataUroPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDataUroPM.Location = new System.Drawing.Point(481, 49);
+            this.txtDataUroPM.Name = "txtDataUroPM";
+            this.txtDataUroPM.Size = new System.Drawing.Size(473, 29);
+            this.txtDataUroPM.TabIndex = 8;
             // 
             // fPracownicy
             // 
@@ -1090,18 +1093,18 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtSur;
-        private System.Windows.Forms.TextBox txtCity;
-        private System.Windows.Forms.TextBox txtCountry;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtEmplacement;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtImiePM;
+        private System.Windows.Forms.TextBox txtNazwiskoPM;
+        private System.Windows.Forms.TextBox txtMiastoPM;
+        private System.Windows.Forms.TextBox txtKrajUroPM;
+        private System.Windows.Forms.TextBox txtEmailPM;
+        private System.Windows.Forms.TextBox txtNumerPM;
+        private System.Windows.Forms.TextBox txtStanowiskoPM;
+        private System.Windows.Forms.TextBox txtPeselPM;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioObywatelstwoPolM;
+        private System.Windows.Forms.RadioButton radioObywatelstwoCudzM;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button button2;
@@ -1126,12 +1129,12 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.RadioButton radioObywatelstwoCudz;
         private System.Windows.Forms.DataGridView dgvPrzegladaj;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TextBox txtBorn;
-        private System.Windows.Forms.TextBox txtZipcode;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.ListBox txtGender;
+        private System.Windows.Forms.TextBox txtAdresPM;
+        private System.Windows.Forms.ListBox txtPlecPM;
         private System.Windows.Forms.ListBox listboxPlecP;
         private System.Windows.Forms.MaskedTextBox mastxtKodPocztowyP;
-        private System.Windows.Forms.MaskedTextBox txtDataUroP;
+        private System.Windows.Forms.DateTimePicker txtDataUroP;
+        private System.Windows.Forms.MaskedTextBox txtKodPocztowyPM;
+        private System.Windows.Forms.DateTimePicker txtDataUroPM;
     }
 }

@@ -16,11 +16,11 @@ namespace Biznes_Menedżer
     {
         MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
         bool polaczony = false;
-        private int wybrano;
-        string pochodzenie;
+        private int wybranoO, index, wybranoP, indexUsun;
+        string pochodzenie, pochodzenieM;
         public fPracownicy(int wybrano)
         {
-            this.wybrano = wybrano;
+            this.wybranoO = wybrano;
             InitializeComponent();
         }
 
@@ -59,13 +59,13 @@ namespace Biznes_Menedżer
             }
             catch (MySql.Data.MySqlClient.MySqlException e)
             {
-                MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe.");
+                MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe. I załaduj okienko jeszcze raz");
             }
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            ladowanie_bazy("SELECT * FROM pracownicy WHERE ID_obiektu ="+wybrano);
+            ladowanie_bazy("SELECT ID, Imie, Nazwisko, Miasto, Adres, Plec, Kod_Pocztowy, Data_Urodzenia, `E-mail`, Numer_Kontaktowy, Stanowisko, Pesel, Pochodzenie FROM pracownicy WHERE ID_obiektu ="+wybranoO);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,200 +79,163 @@ namespace Biznes_Menedżer
 
         private void Name_Clear(object sender, EventArgs e)
         {
-            if (txtName.Text == "* Imie")
+            if (txtImiePM.Text == "* Imie")
             {
-                txtName.Clear();
-                txtName.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtImiePM.Clear();
+                txtImiePM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Name_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (string.IsNullOrEmpty(txtImiePM.Text))
             {
-                txtName.Text = "* Imie";
-                txtName.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtImiePM.Text = "* Imie";
+                txtImiePM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Surname_Clear(object sender, EventArgs e)
         {
-            if (txtSur.Text == "* Nazwisko")
+            if (txtNazwiskoPM.Text == "* Nazwisko")
             {
-                txtSur.Clear();
-                txtSur.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNazwiskoPM.Clear();
+                txtNazwiskoPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Surname_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSur.Text))
+            if (string.IsNullOrEmpty(txtNazwiskoPM.Text))
             {
-                txtSur.Text = "* Nazwisko";
-                txtSur.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNazwiskoPM.Text = "* Nazwisko";
+                txtNazwiskoPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void City_Clear(object sender, EventArgs e)
         {
-            if (txtCity.Text == "* Miasto")
+            if (txtMiastoPM.Text == "* Miasto")
             {
-                txtCity.Clear();
-                txtCity.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtMiastoPM.Clear();
+                txtMiastoPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void City_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCity.Text))
+            if (string.IsNullOrEmpty(txtMiastoPM.Text))
             {
-                txtCity.Text = "* Miasto";
-                txtCity.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtMiastoPM.Text = "* Miasto";
+                txtMiastoPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Address_Clear(object sender, EventArgs e)
         {
-            if (txtAddress.Text == "* Adres")
+            if (txtAdresPM.Text == "* Adres")
             {
-                txtAddress.Clear();
-                txtAddress.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtAdresPM.Clear();
+                txtAdresPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Address_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtAddress.Text))
+            if (string.IsNullOrEmpty(txtAdresPM.Text))
             {
-                txtAddress.Text = "* Adres";
-                txtAddress.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtAdresPM.Text = "* Adres";
+                txtAdresPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
-
-        private void Zipcode_Clear(object sender, EventArgs e)
-        {
-            if (txtZipcode.Text == "* Kod pocztowy")
-            {
-                txtZipcode.Clear();
-                txtZipcode.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void Zipcode_Return(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtZipcode.Text))
-            {
-                txtZipcode.Text = "* Kod pocztowy";
-                txtZipcode.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void Born_Clear(object sender, EventArgs e)
-        {
-            if (txtBorn.Text == "* Data urodzenia")
-            {
-                txtBorn.Clear();
-                txtBorn.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void Born_Return(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtBorn.Text))
-            {
-                txtBorn.Text = "* Data urodzenia";
-                txtBorn.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
         private void Country_Clear(object sender, EventArgs e)
         {
-            if (txtCountry.Text == "* Kraj urodzenia")
+            if (txtKrajUroPM.Text == "* Kraj urodzenia")
             {
-                txtCountry.Clear();
-                txtCountry.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtKrajUroPM.Clear();
+                txtKrajUroPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Country_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCountry.Text))
+            if (string.IsNullOrEmpty(txtKrajUroPM.Text))
             {
-                txtCountry.Text = "* Kraj urodzenia";
-                txtCountry.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtKrajUroPM.Text = "* Kraj urodzenia";
+                txtKrajUroPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
 
         private void Email_Clear(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "Email")
+            if (txtEmailPM.Text == "Email")
             {
-                txtEmail.Clear();
-                txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtEmailPM.Clear();
+                txtEmailPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Email_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEmail.Text))
+            if (string.IsNullOrEmpty(txtEmailPM.Text))
             {
-                txtEmail.Text = "Email";
-                txtEmail.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtEmailPM.Text = "Email";
+                txtEmailPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Phone_Clear(object sender, EventArgs e)
         {
-            if (txtPhone.Text == "* Numer kontaktowy")
+            if (txtNumerPM.Text == "* Numer kontaktowy")
             {
-                txtPhone.Clear();
-                txtPhone.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNumerPM.Clear();
+                txtNumerPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Phone_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtPhone.Text))
+            if (string.IsNullOrEmpty(txtNumerPM.Text))
             {
-                txtPhone.Text = "* Numer kontaktowy";
-                txtPhone.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtNumerPM.Text = "* Numer kontaktowy";
+                txtNumerPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Employment_Clear(object sender, EventArgs e)
         {
-            if (txtEmplacement.Text == "Stanowisko")
+            if (txtStanowiskoPM.Text == "Stanowisko")
             {
-                txtEmplacement.Clear();
-                txtEmplacement.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtStanowiskoPM.Clear();
+                txtStanowiskoPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void Employment_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtEmplacement.Text))
+            if (string.IsNullOrEmpty(txtStanowiskoPM.Text))
             {
-                txtEmplacement.Text = "Stanowisko";
-                txtEmplacement.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtStanowiskoPM.Text = "Stanowisko";
+                txtStanowiskoPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void ID_Clear(object sender, EventArgs e)
         {
-            if (txtID.Text == "* Pesel")
+            if (txtPeselPM.Text == "* Pesel")
             {
-                txtID.Clear();
-                txtID.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtPeselPM.Clear();
+                txtPeselPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
         private void ID_Return(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtID.Text))
+            if (string.IsNullOrEmpty(txtPeselPM.Text))
             {
-                txtID.Text = "* Pesel";
-                txtID.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
+                txtPeselPM.Text = "* Pesel";
+                txtPeselPM.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
@@ -348,42 +311,6 @@ namespace Biznes_Menedżer
             {
                 txtAdresP.Text = "* Adres";
                 txtAdresP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void mastxtKodPocztowyP_Clear(object sender, EventArgs e)
-        {
-            if (mastxtKodPocztowyP.Text == "* Kod pocztowy")
-            {
-                mastxtKodPocztowyP.Clear();
-                mastxtKodPocztowyP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void mastxtKodPocztowyP_Return(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(mastxtKodPocztowyP.Text))
-            {
-                mastxtKodPocztowyP.Text = "* Kod pocztowy";
-                mastxtKodPocztowyP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void Born2_Clear(object sender, EventArgs e)
-        {
-            if (txtDataUroP.Text == "* Data urodzenia")
-            {
-                txtDataUroP.Clear();
-                txtDataUroP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
-            }
-        }
-
-        private void Born2_Return(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtDataUroP.Text))
-            {
-                txtDataUroP.Text = "* Data urodzenia";
-                txtDataUroP.Font = new Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)(System.Drawing.FontStyle.Regular)));
             }
         }
 
@@ -490,7 +417,7 @@ namespace Biznes_Menedżer
             {
                 pochodzenie = "Cudzoziemskie";
             }
-            MySqlCommand dodanie = new MySqlCommand("INSERT INTO pracownicy (ID_obiektu, Imie, Nazwisko, Adres, Plec, Kod_Pocztowy, Data_Urodzenia, Kraj_Urodzenia, `E-mail`, Numer_Kontaktowy, Stanowisko, Pesel, Pochodzenie) Values('"+wybrano+"', '"+txtImieP.Text+"','"+txtNazwiskoP.Text+"','"+txtAdresP.Text+"','"+listboxPlecP.Items+"','"+ mastxtKodPocztowyP.Text+"','"+ DateTime.Parse(txtDataUroP.Text)+"','"+txtKrajP.Text+"','"+txtEmail.Text+"','"+txtNumerP.Text+"','"+txtStanowiskoP.Text+"','"+txtPeselP.Text+"','"+pochodzenie+ "'); UPDATE obiekty SET Liczba_pracownikow = Liczba_pracownikow+1 WHERE (SELECT COUNT(*) FROM pracownicy WHERE pracownicy.ID_obiektu = "+wybrano+") > Liczba_pracownikow", connection);
+            MySqlCommand dodanie = new MySqlCommand("INSERT INTO pracownicy (ID_obiektu, Imie, Nazwisko, Miasto, Adres, Plec, Kod_Pocztowy, Data_Urodzenia, Kraj_Urodzenia, `E-mail`, Numer_Kontaktowy, Stanowisko, Pesel, Pochodzenie) Values('"+wybranoO+"', '"+txtImieP.Text+"','"+txtNazwiskoP.Text+"','"+txtMiastoP.Text+"','" + txtAdresP.Text+"','"+listboxPlecP.Items.ToString()+"','"+ mastxtKodPocztowyP.Text+"','"+ txtDataUroP.Value.Date.ToString("yyyy-MM-dd")+ "','"+txtKrajP.Text+"','"+txtEmailPM.Text+"','"+txtNumerP.Text+"','"+txtStanowiskoP.Text+"','"+txtPeselP.Text+"','"+pochodzenie+ "'); UPDATE obiekty SET Liczba_pracownikow = Liczba_pracownikow+1 WHERE (SELECT COUNT(*) FROM pracownicy WHERE pracownicy.ID_obiektu = "+wybranoO+") > Liczba_pracownikow", connection);
             if (string.IsNullOrEmpty(txtImieP.Text) || string.IsNullOrEmpty(txtNazwiskoP.Text) || string.IsNullOrEmpty(txtAdresP.Text) || string.IsNullOrEmpty(listboxPlecP.Items.ToString()) || string.IsNullOrEmpty(mastxtKodPocztowyP.Text) || string.IsNullOrEmpty(txtDataUroP.Text) || string.IsNullOrEmpty(txtKrajP.Text) || string.IsNullOrEmpty(txtNumerP.Text) || string.IsNullOrEmpty(txtPeselP.Text) || pochodzenie == "")
             {
                 MessageBox.Show("nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
@@ -501,6 +428,126 @@ namespace Biznes_Menedżer
                 dodanie.ExecuteNonQuery();
                 niszczenie_pol();
                 MessageBox.Show("Pracownik został dodany do bazy.");
+            }
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+            if(wybranoP == 0)
+            {
+                MessageBox.Show("Nie wybrałeś Pracownika do modyikowania przejdź do zakładki przeglądaj i wybierz go. (Dwukrotne klikniecie na jakiegos)");
+            }
+        }
+
+        private void dgvPrzegladaj_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexUsun = e.RowIndex;
+        }
+
+        private void dgvPrzegladaj_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+            
+        }
+
+        private void dgvPrzegladaj_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            ladowanie_bazy("SELECT ID, Imie, Nazwisko, Miasto, Adres, Plec, Kod_Pocztowy, Data_Urodzenia, `E-mail`, Numer_Kontaktowy, Stanowisko, Pesel, Pochodzenie FROM pracownicy WHERE ID_obiektu =" + wybranoO);
+        }
+
+        private void dgvPrzegladaj_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+            if (indexUsun > -1)
+            {
+
+                DataGridViewRow wybrane = dgvPrzegladaj.Rows[indexUsun];
+                if (wybrane.Cells[0].Value is System.DBNull || wybrane.Cells[0].Value is 0)
+                {
+                    MessageBox.Show("Błąd wybierz inne");
+                }
+                else
+                {
+                    if (e.KeyCode == Keys.D)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Czy jesteś pewien że chcesz usunąć pracownika z ID: " + wybrane.Cells[0].Value.ToString(), "Usuwanie", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            tworzenie_pol();
+                            MySqlCommand usun = new MySqlCommand("DELETE FROM pracownicy WHERE ID = " + wybrane.Cells[0].Value, connection);
+                            usun.ExecuteNonQuery();
+                            MessageBox.Show("Usunięto");
+                            niszczenie_pol();
+                            ladowanie_bazy("SELECT ID, Imie, Nazwisko, Miasto, Adres, Plec, Kod_Pocztowy, Data_Urodzenia, `E-mail`, Numer_Kontaktowy, Stanowisko, Pesel, Pochodzenie FROM pracownicy WHERE ID_obiektu =" + wybranoO);
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            if(wybranoP != 0)
+            {
+                if (radioObywatelstwoPolM.Checked == true)
+                {
+                    pochodzenieM = "Polskie";
+                }
+                else if (radioObywatelstwoCudzM.Checked == true)
+                {
+                    pochodzenieM = "Cudzoziemskie";
+                }
+                tworzenie_pol();
+                if (wybranoP == 0)
+                {
+                    MessageBox.Show("Nie wybrałeś pracownika, przejdź do zakładki przeglądaj i wybierz (Dwukrotne klikniecie na pracownika).");
+                }
+                if (wybranoP > 0)
+                {
+                    MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE pracownicy SET Imie ='" + txtImiePM.Text + "',Nazwisko='" + txtNazwiskoPM.Text + "',Miasto='" + txtMiastoPM.Text
+                        + "',Adres ='" + txtAdresPM.Text + "',Plec= '" + txtPlecPM.Items.ToString() + "',Kod_Pocztowy='" + txtKodPocztowyPM.Text + "',Data_Urodzenia='" + txtDataUroPM.Value.Date.ToString("yyyy-MM-dd")
+                        + "',Kraj_Urodzenia='" + txtKrajUroPM.Text + "',`E-mail`='" + txtEmailPM.Text + "',Numer_Kontaktowy='" + txtNumerPM.Text + "',Stanowisko='" + txtStanowiskoPM.Text + "',Pesel='" + txtPeselPM.Text + "',Pochodzenie='" + pochodzenieM + "' WHERE ID = '" + wybranoP+"'", connection);
+                    modyfikuj_towar.ExecuteNonQuery();
+                    MessageBox.Show("Zmodyfikowałeś pracownika z ID " + wybranoP);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrałeś Pracownika do modyikowania przejdź do zakładki przeglądaj i wybierz go. (Dwukrotne klikniecie na jakiegos)");
+            }
+        }
+
+        private void listboxPlecP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPrzegladaj_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            if (index > -1)
+            {
+
+                DataGridViewRow wybrane = dgvPrzegladaj.Rows[index];
+                if (wybrane.Cells[0].Value is System.DBNull || wybrane.Cells[0].Value is 0)
+                {
+                    MessageBox.Show("Błąd wybierz inne");
+                }
+                else
+                {
+                    wybranoP = Convert.ToInt32(wybrane.Cells[0].Value);
+
+                    MessageBox.Show("Wybrałeś Pracownika z ID: " + wybranoP);
+                }
             }
         }
     }

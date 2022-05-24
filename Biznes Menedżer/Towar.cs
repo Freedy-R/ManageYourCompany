@@ -16,7 +16,7 @@ namespace Biznes_Menedżer
         MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
         bool polaczony = false;
         private int wybranoO = 0;
-        private int wybrano = 0;
+        private int wybranoT = 0;
         private int index;
         DataGridViewRow wybrane;
         string nazwa, ilosc, producent, nr_faktury, podatek, cenaNetto, cenaBrutto, stan;
@@ -114,7 +114,6 @@ namespace Biznes_Menedżer
         private void dgvPrzegladaj_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             index = e.RowIndex;
-            this.index = index;
         }
         private void dgvPrzegladaj_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,8 +127,8 @@ namespace Biznes_Menedżer
                 }
                 else
                 {
-                    wybrano = Convert.ToInt32(wybrane.Cells[0].Value);
-                    MessageBox.Show("Wybrałeś obiekt z ID: " + wybrano);
+                    wybranoT = Convert.ToInt32(wybrane.Cells[0].Value);
+                    MessageBox.Show("Wybrałeś obiekt z ID: " + wybranoT);
                 }
             }
         }
@@ -153,16 +152,17 @@ namespace Biznes_Menedżer
         private void btnModify_Click(object sender, EventArgs e)
         {
             tworzenie_pol();
-            if (wybranoO == 0)
+            if (wybranoT == 0)
             {
                 MessageBox.Show("Nie wybrałeś obiektu, przejdź do zakładki przeglądaj i wybierz (Dwukrotne klikniecie na towar).");
             }
-            if (wybranoO > 0)
+            if (wybranoT > 0)
             {
                 MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE towar SET Nazwa ='" + txtNazwaM.Text + "',Ilosc=" + numIloscM.Value + ",Producent='" + txtProducentM.Text 
                     + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto='" + lblWartoscBrutto.Text 
-                    + "',Stan='"+ cbStanM.Text+"' WHERE ID ="+wybrano,connection);
+                    + "',Stan='"+ cbStanM.Text+"' WHERE ID ="+wybranoT,connection);
                 modyfikuj_towar.ExecuteNonQuery();
+                MessageBox.Show("Zmodyfikowałeś towar z ID +" + wybranoT);
             }
             
         }
