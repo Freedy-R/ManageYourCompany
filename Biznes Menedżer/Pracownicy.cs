@@ -14,7 +14,7 @@ namespace Biznes_Menedżer
 {
     public partial class fPracownicy : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
+        MySqlConnection connection = new MySqlConnection("Server=mysql8001.site4now.net;User=a877f4_sklep;Database=db_a877f4_sklep;Password=kamilos04;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
         //MySqlConnection connection = new MySqlConnection("Server=localhost;User=root;Database=sklep;Password=;"); //Pamiętaj by stworzyć za pomocą xamppa bazę sklep i zaimportować z folderu baza danych
         bool polaczony = false;
         private int wybranoO, index, wybranoP, indexUsun;

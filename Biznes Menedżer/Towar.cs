@@ -13,7 +13,7 @@ namespace Biznes_Menedżer
 {
     public partial class fTowar : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
+        MySqlConnection connection = new MySqlConnection("Server=mysql8001.site4now.net;User=a877f4_sklep;Database=db_a877f4_sklep;Password=kamilos04;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
        //MySqlConnection connection = new MySqlConnection("Server=localhost;User=root;Database=sklep;Password=;"); //Pamiętaj by stworzyć za pomocą xamppa bazę sklep i zaimportować z folderu baza danych
         bool polaczony = false;
         private int wybranoO = 0;
@@ -107,6 +107,7 @@ namespace Biznes_Menedżer
             lblWartoscNetto.Text = numCenaNetto.Value.ToString();
             lblKpodatkow.Text = (numCenaNetto.Value * (numPodatek.Value / 100)).ToString();
             lblWartoscBrutto.Text = (numCenaNetto.Value + (numCenaNetto.Value * (numPodatek.Value / 100))).ToString();
+
         }
 
         private void dgvPrzegladaj_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -218,8 +219,8 @@ namespace Biznes_Menedżer
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             tworzenie_pol();
-            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(ID_Obiektu,Nazwa, Ilosc, Producent, Nr_Faktury, Podatki, Cena_Netto, Stan) " +
-                "VALUES" + "('" + this.wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
+            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(`ID_obiektu`,`Nazwa`, `Ilosc`,`Producent`, `Nr_Faktury`,`Podatki`,`Cena_Netto`,`Cena_Brutto`,`Stan`) " +
+                "VALUES" + "('" + wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "'," + decimal.Parse(lblWartoscBrutto.Text) + ",'" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
             if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
             {
                 MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
@@ -245,6 +246,7 @@ namespace Biznes_Menedżer
                     + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto='" + lblWartoscBrutto.Text 
                     + "',Stan='"+ cbStanM.Text+"' WHERE ID ="+wybranoT,connection);
                 modyfikuj_towar.ExecuteNonQuery();
+                niszczenie_pol();
                 MessageBox.Show("Zmodyfikowałeś towar z ID +" + wybranoT);
             }
             
