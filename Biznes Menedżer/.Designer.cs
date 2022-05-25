@@ -103,6 +103,7 @@ namespace Biznes_Menedżer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
             this.ClientSize = new System.Drawing.Size(313, 383);
             this.Controls.Add(this.button2);
@@ -112,7 +113,9 @@ namespace Biznes_Menedżer
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "fStan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zmień Stan";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

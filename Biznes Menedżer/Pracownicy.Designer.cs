@@ -71,8 +71,10 @@ namespace Biznes_Menedżer
             this.txtMiastoPM = new System.Windows.Forms.TextBox();
             this.txtKrajUroPM = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDataUroPM = new System.Windows.Forms.DateTimePicker();
+            this.txtKodPocztowyPM = new System.Windows.Forms.MaskedTextBox();
             this.txtAdresPM = new System.Windows.Forms.TextBox();
-            this.txtPlecPM = new System.Windows.Forms.ListBox();
+            this.listboxPlecPM = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -86,8 +88,6 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.radioObywatelstwoPolM = new System.Windows.Forms.RadioButton();
             this.radioObywatelstwoCudzM = new System.Windows.Forms.RadioButton();
-            this.txtKodPocztowyPM = new System.Windows.Forms.MaskedTextBox();
-            this.txtDataUroPM = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.W_AddLayout.SuspendLayout();
@@ -135,6 +135,7 @@ namespace Biznes_Menedżer
             this.tabPage1.Size = new System.Drawing.Size(1932, 869);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dodaj";
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
             // W_AddLayout
             // 
@@ -422,6 +423,7 @@ namespace Biznes_Menedżer
             this.btnAnuluj.TabIndex = 0;
             this.btnAnuluj.Text = "Anuluj";
             this.btnAnuluj.UseVisualStyleBackColor = false;
+            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
             // txtEmailP
             // 
@@ -634,6 +636,7 @@ namespace Biznes_Menedżer
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Modyfikuj";
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
+            this.tabPage3.Leave += new System.EventHandler(this.tabPage3_Leave);
             // 
             // tableLayoutPanel16
             // 
@@ -766,7 +769,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.Controls.Add(this.txtDataUroPM, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtKodPocztowyPM, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtAdresPM, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtPlecPM, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.listboxPlecPM, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 599);
@@ -777,6 +780,25 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(957, 93);
             this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // txtDataUroPM
+            // 
+            this.txtDataUroPM.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDataUroPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDataUroPM.Location = new System.Drawing.Point(481, 49);
+            this.txtDataUroPM.Name = "txtDataUroPM";
+            this.txtDataUroPM.Size = new System.Drawing.Size(473, 29);
+            this.txtDataUroPM.TabIndex = 8;
+            // 
+            // txtKodPocztowyPM
+            // 
+            this.txtKodPocztowyPM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtKodPocztowyPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtKodPocztowyPM.Location = new System.Drawing.Point(3, 49);
+            this.txtKodPocztowyPM.Mask = "00-000";
+            this.txtKodPocztowyPM.Name = "txtKodPocztowyPM";
+            this.txtKodPocztowyPM.Size = new System.Drawing.Size(472, 38);
+            this.txtKodPocztowyPM.TabIndex = 7;
             // 
             // txtAdresPM
             // 
@@ -792,19 +814,19 @@ namespace Biznes_Menedżer
             this.txtAdresPM.Enter += new System.EventHandler(this.Address_Clear);
             this.txtAdresPM.Leave += new System.EventHandler(this.Address_Return);
             // 
-            // txtPlecPM
+            // listboxPlecPM
             // 
-            this.txtPlecPM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPlecPM.FormattingEnabled = true;
-            this.txtPlecPM.ItemHeight = 24;
-            this.txtPlecPM.Items.AddRange(new object[] {
+            this.listboxPlecPM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listboxPlecPM.FormattingEnabled = true;
+            this.listboxPlecPM.ItemHeight = 24;
+            this.listboxPlecPM.Items.AddRange(new object[] {
             "Mężczyzna",
             "Kobieta"});
-            this.txtPlecPM.Location = new System.Drawing.Point(478, 0);
-            this.txtPlecPM.Margin = new System.Windows.Forms.Padding(0);
-            this.txtPlecPM.Name = "txtPlecPM";
-            this.txtPlecPM.Size = new System.Drawing.Size(479, 46);
-            this.txtPlecPM.TabIndex = 4;
+            this.listboxPlecPM.Location = new System.Drawing.Point(478, 0);
+            this.listboxPlecPM.Margin = new System.Windows.Forms.Padding(0);
+            this.listboxPlecPM.Name = "listboxPlecPM";
+            this.listboxPlecPM.Size = new System.Drawing.Size(479, 46);
+            this.listboxPlecPM.TabIndex = 4;
             // 
             // label1
             // 
@@ -1010,25 +1032,6 @@ namespace Biznes_Menedżer
             this.radioObywatelstwoCudzM.Text = "Cudzoziemiec";
             this.radioObywatelstwoCudzM.UseVisualStyleBackColor = true;
             // 
-            // txtKodPocztowyPM
-            // 
-            this.txtKodPocztowyPM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtKodPocztowyPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtKodPocztowyPM.Location = new System.Drawing.Point(3, 49);
-            this.txtKodPocztowyPM.Mask = "00-000";
-            this.txtKodPocztowyPM.Name = "txtKodPocztowyPM";
-            this.txtKodPocztowyPM.Size = new System.Drawing.Size(472, 38);
-            this.txtKodPocztowyPM.TabIndex = 7;
-            // 
-            // txtDataUroPM
-            // 
-            this.txtDataUroPM.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataUroPM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDataUroPM.Location = new System.Drawing.Point(481, 49);
-            this.txtDataUroPM.Name = "txtDataUroPM";
-            this.txtDataUroPM.Size = new System.Drawing.Size(473, 29);
-            this.txtDataUroPM.TabIndex = 8;
-            // 
             // fPracownicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1130,7 +1133,7 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.DataGridView dgvPrzegladaj;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox txtAdresPM;
-        private System.Windows.Forms.ListBox txtPlecPM;
+        private System.Windows.Forms.ListBox listboxPlecPM;
         private System.Windows.Forms.ListBox listboxPlecP;
         private System.Windows.Forms.MaskedTextBox mastxtKodPocztowyP;
         private System.Windows.Forms.DateTimePicker txtDataUroP;

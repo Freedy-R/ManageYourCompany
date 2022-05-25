@@ -13,7 +13,7 @@ namespace Biznes_Menedżer
 {
     public partial class modyfikuj_obiekt : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
+        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");
         bool polaczony = false;
         int wybrano;
         string adres, nazwaObiektu, kodP, miejscowosc, telefon;
@@ -48,7 +48,7 @@ namespace Biznes_Menedżer
         private void btnZapisz_Click(object sender, EventArgs e)
         {
             tworzenie_pol();
-            MySqlCommand modyfikacja = new MySqlCommand("UPDATE obiekty SET Nazwa_obiektu='"+txtNazwaObiektu.Text+"', Adres='"+txtAdres.Text+"', Kod_Pocztowy='"+txtKodPocztowy.Text+"', Miejscowosc='"+txtMiejscowosc.Text+"', Telefon='"+txtNumer.Text+"'",connection);
+            MySqlCommand modyfikacja = new MySqlCommand("UPDATE obiekty SET Nazwa_obiektu='"+txtNazwaObiektu.Text+"', Adres='"+txtAdres.Text+"', Kod_Pocztowy='"+txtKodPocztowy.Text+"', Miejscowosc='"+txtMiejscowosc.Text+"', Telefon='"+txtNumer.Text+"' WHERE ID ="+wybrano,connection);
             modyfikacja.ExecuteNonQuery();
             MessageBox.Show("Zmiana Udana");
             fMenu form = new fMenu();

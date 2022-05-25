@@ -13,11 +13,11 @@ namespace Biznes_Menedżer
 {
     public partial class fTowar : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
+        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");
         bool polaczony = false;
         private int wybranoO = 0;
         private int wybranoT = 0;
-        private int index;
+        private int index, indexUsun;
         DataGridViewRow wybrane;
         string nazwa, ilosc, producent, nr_faktury, podatek, cenaNetto, cenaBrutto, stan;
         public fTowar(int wybrano)
@@ -30,16 +30,30 @@ namespace Biznes_Menedżer
         {
             if (polaczony == false)
             {
-                connection.Open();
-                polaczony = true;
+                try
+                {
+                    connection.Open();
+                    polaczony = true;
+                }
+                catch (MySql.Data.MySqlClient.MySqlException)
+                {
+                    MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe lub zbyt duży ruch na serwerze. ");
+                }
             }
         }
         public void niszczenie_pol()
         {
             if (polaczony == true)
             {
-                connection.Close();
-                polaczony = false;
+                try
+                {
+                    connection.Close();
+                    polaczony = false;
+                }
+                catch (MySql.Data.MySqlClient.MySqlException)
+                {
+                    MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe lub zbyt duży ruch na serwerze. ");
+                }
             }
         }
         public void ladowanie_bazy(string qu)
@@ -92,6 +106,57 @@ namespace Biznes_Menedżer
             lblWartoscNetto.Text = numCenaNetto.Value.ToString();
             lblKpodatkow.Text = (numCenaNetto.Value * (numPodatek.Value / 100)).ToString();
             lblWartoscBrutto.Text = (numCenaNetto.Value + (numCenaNetto.Value * (numPodatek.Value / 100))).ToString();
+        }
+
+        private void dgvPrzegladaj_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (indexUsun > -1)
+            {
+
+                DataGridViewRow wybrane = dgvPrzegladaj.Rows[indexUsun];
+                if (wybrane.Cells[0].Value is System.DBNull || wybrane.Cells[0].Value is 0)
+                {
+                    MessageBox.Show("Błąd wybierz inne");
+                }
+                else
+                {
+                    if (e.KeyCode == Keys.D)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Czy jesteś pewien że chcesz usunąć Towar z ID: " + wybrane.Cells[0].Value.ToString(), "Usuwanie", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            tworzenie_pol();
+                            MySqlCommand usun = new MySqlCommand("DELETE FROM towar WHERE ID = " + wybrane.Cells[0].Value + ";", connection);
+                            usun.ExecuteNonQuery();
+                            MessageBox.Show("Usunięto");
+                            niszczenie_pol();
+                            ladowanie_bazy("SELECT * FROM towar WHERE ID_obiektu =" + wybranoO);
+                        }
+                        else if (dialogResult == DialogResult.No)
+                        {
+                        }
+                    }
+                }
+            }
+        }
+
+        private void dgvPrzegladaj_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexUsun = e.RowIndex;
+            if (e.RowIndex > -1)
+            {
+                index = e.RowIndex;
+                DataGridViewRow wybrane = dgvPrzegladaj.Rows[index];
+                if (dgvPrzegladaj.CurrentCell.ColumnIndex.Equals(9))
+                {
+                    fStan stan = new fStan();
+                    this.Enabled = false;
+                    stan.Show();
+                    stan.Closed += (s, args) => this.Close();
+                    stan.Show();
+                    stan.Activate();
+                }
+            }
         }
 
         private void tabPage1_Enter(object sender, EventArgs e)

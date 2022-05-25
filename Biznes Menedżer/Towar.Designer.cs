@@ -584,8 +584,10 @@ namespace Biznes_Menedżer
             this.dgvPrzegladaj.Name = "dgvPrzegladaj";
             this.dgvPrzegladaj.Size = new System.Drawing.Size(1920, 776);
             this.dgvPrzegladaj.TabIndex = 1;
+            this.dgvPrzegladaj.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellClick);
             this.dgvPrzegladaj.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellDoubleClick);
             this.dgvPrzegladaj.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellEndEdit);
+            this.dgvPrzegladaj.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dgvPrzegladaj_PreviewKeyDown);
             // 
             // tabPage3
             // 

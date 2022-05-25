@@ -13,7 +13,7 @@ namespace Biznes_Menedżer
 {
     public partial class fMenu : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11493326;Database=sql11493326;Password=Z4ByNssQ9K;");
+        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");
         bool polaczony = false;
         int wybrano = 0;
         private int index;
@@ -39,6 +39,12 @@ namespace Biznes_Menedżer
                 polaczony = false;
             }
         }
+
+        private void dgvObiekty_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         public void ladowanie_bazy(string qu)
         {
             this.dgvObiekty.DataSource = null;
@@ -52,9 +58,9 @@ namespace Biznes_Menedżer
                     dgvObiekty.DataSource = ds.Tables[0];
                 }
             }
-            catch (MySql.Data.MySqlClient.MySqlException)
+            catch (MySql.Data.MySqlClient.MySqlException e)
             {
-                MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe lub zbyt duży ruch na serwerze odśwież karte (wyjdź wejdź)");
+                MessageBox.Show("Wychodzi na to że masz błąd sprawdź połączenie internetowe lub zbyt duży ruch na serwerze odśwież karte (wyjdź wejdź) " +e);
             }
         }
 
@@ -141,8 +147,8 @@ namespace Biznes_Menedżer
                 else
                 {
                     wybrano = Convert.ToInt32(wybrane.Cells[0].Value);
-                    
                     MessageBox.Show("Wybrałeś obiekt z ID: " + wybrano);
+                    rtxtWybrano.Text = "Wybrałeś Obiekt z ID: " + wybrano;
                 }
             }
         }
