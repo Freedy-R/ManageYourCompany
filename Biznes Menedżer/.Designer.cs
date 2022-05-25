@@ -31,11 +31,11 @@ namespace Biznes_Menedżer
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numIlosc = new System.Windows.Forms.NumericUpDown();
+            this.cbStan = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numIlosc)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,22 +58,26 @@ namespace Biznes_Menedżer
             this.label2.TabIndex = 1;
             this.label2.Text = "Zmiana Stanu";
             // 
-            // numericUpDown1
+            // numIlosc
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown1.Location = new System.Drawing.Point(17, 61);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(258, 31);
-            this.numericUpDown1.TabIndex = 2;
+            this.numIlosc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numIlosc.Location = new System.Drawing.Point(17, 61);
+            this.numIlosc.Name = "numIlosc";
+            this.numIlosc.Size = new System.Drawing.Size(258, 31);
+            this.numIlosc.TabIndex = 2;
             // 
-            // comboBox1
+            // cbStan
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 172);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 33);
-            this.comboBox1.TabIndex = 3;
+            this.cbStan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStan.FormattingEnabled = true;
+            this.cbStan.Items.AddRange(new object[] {
+            "W magazynie",
+            "Na półkach",
+            "W drodze"});
+            this.cbStan.Location = new System.Drawing.Point(17, 172);
+            this.cbStan.Name = "cbStan";
+            this.cbStan.Size = new System.Drawing.Size(258, 33);
+            this.cbStan.TabIndex = 3;
             // 
             // button1
             // 
@@ -98,6 +102,7 @@ namespace Biznes_Menedżer
             this.button2.TabIndex = 5;
             this.button2.Text = "Zmień";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // fStan
             // 
@@ -108,15 +113,16 @@ namespace Biznes_Menedżer
             this.ClientSize = new System.Drawing.Size(313, 383);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.cbStan);
+            this.Controls.Add(this.numIlosc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "fStan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zmień Stan";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Enter += new System.EventHandler(this.fStan_Enter);
+            ((System.ComponentModel.ISupportInitialize)(this.numIlosc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,8 +132,8 @@ namespace Biznes_Menedżer
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numIlosc;
+        private System.Windows.Forms.ComboBox cbStan;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

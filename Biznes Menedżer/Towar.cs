@@ -13,7 +13,8 @@ namespace Biznes_Menedżer
 {
     public partial class fTowar : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");
+        MySqlConnection connection = new MySqlConnection("Server=sql11.freemysqlhosting.net;User=sql11495118;Database=sql11495118;Password=TmiBWjhEKf;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
+       //MySqlConnection connection = new MySqlConnection("Server=localhost;User=root;Database=sklep;Password=;"); //Pamiętaj by stworzyć za pomocą xamppa bazę sklep i zaimportować z folderu baza danych
         bool polaczony = false;
         private int wybranoO = 0;
         private int wybranoT = 0;
@@ -142,14 +143,31 @@ namespace Biznes_Menedżer
 
         private void dgvPrzegladaj_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int maxIlosc, idTowaru, podatekTowaru;
+            decimal cenaNettoTowaru, cenaBruttoTowaru;
+            string nazwaTowaru, producentTowaru, nr_fakturyTowaru,stanTowaru;
             indexUsun = e.RowIndex;
             if (e.RowIndex > -1)
             {
                 index = e.RowIndex;
                 DataGridViewRow wybrane = dgvPrzegladaj.Rows[index];
-                if (dgvPrzegladaj.CurrentCell.ColumnIndex.Equals(9))
+                if (wybrane.Cells[0].Value is System.DBNull || Convert.ToInt32(wybrane.Cells[0].Value) == 0)
                 {
-                    fStan stan = new fStan();
+                    MessageBox.Show("Wybrałeś nie prawidłowo ");
+                }
+                else if(dgvPrzegladaj.CurrentCell.ColumnIndex.Equals(9) && (wybrane.Cells[0].Value is System.DBNull) == false)
+                {
+
+                    idTowaru = Convert.ToInt32(wybrane.Cells[0].Value);
+                    nazwaTowaru = wybrane.Cells[2].Value.ToString();
+                    maxIlosc = Convert.ToInt32(wybrane.Cells[3].Value);
+                    producentTowaru = wybrane.Cells[4].Value.ToString();
+                    nr_fakturyTowaru = wybrane.Cells[5].Value.ToString();
+                    podatekTowaru = Convert.ToInt32(wybrane.Cells[6].Value.ToString());
+                    cenaNettoTowaru = Convert.ToDecimal(wybrane.Cells[7].Value);
+                    cenaBruttoTowaru = Convert.ToDecimal(wybrane.Cells[8].Value);
+                    stanTowaru = wybrane.Cells[9].Value.ToString();
+                    fStan stan = new fStan(wybranoO, maxIlosc, idTowaru, nazwaTowaru, producentTowaru, nr_fakturyTowaru, podatekTowaru, cenaNettoTowaru, cenaBruttoTowaru, stanTowaru);
                     this.Enabled = false;
                     stan.Show();
                     stan.Closed += (s, args) => this.Close();
