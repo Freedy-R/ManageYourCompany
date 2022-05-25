@@ -13,14 +13,14 @@ namespace Biznes_Menedżer
 {
     public partial class fTowar : Form
     {
-        MySqlConnection connection = new MySqlConnection("Server=mysql8001.site4now.net;User=a877f4_sklep;Database=db_a877f4_sklep;Password=kamilos04;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
+        MySqlConnection connection = new MySqlConnection("Server=mysql8001.site4now.net;User=a877f4_sklepik;Database=db_a877f4_sklepik;Password=kamilos04;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
        //MySqlConnection connection = new MySqlConnection("Server=localhost;User=root;Database=sklep;Password=;"); //Pamiętaj by stworzyć za pomocą xamppa bazę sklep i zaimportować z folderu baza danych
         bool polaczony = false;
         private int wybranoO = 0;
         private int wybranoT = 0;
         private int index, indexUsun;
         DataGridViewRow wybrane;
-        string nazwa, ilosc, producent, nr_faktury, podatek, cenaNetto, cenaBrutto, stan;
+        public decimal cenaBrutto;
         public fTowar(int wybrano)
         {
 
@@ -219,8 +219,7 @@ namespace Biznes_Menedżer
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             tworzenie_pol();
-            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO towar(`ID_obiektu`,`Nazwa`, `Ilosc`,`Producent`, `Nr_Faktury`,`Podatki`,`Cena_Netto`,`Cena_Brutto`,`Stan`) " +
-                "VALUES" + "('" + wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "'," + decimal.Parse(lblWartoscBrutto.Text) + ",'" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
+            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO `towar` (`ID_obiektu`, `Nazwa`, `Ilosc`, `Producent`, `Nr_Faktury`, `Podatki`, `Cena_Netto`, `Cena_Brutto`, `Stan`) VALUES('" + wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + lblWartoscBrutto.Text.Replace(",",".") + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
             if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
             {
                 MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
@@ -243,8 +242,8 @@ namespace Biznes_Menedżer
             if (wybranoT > 0)
             {
                 MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE towar SET Nazwa ='" + txtNazwaM.Text + "',Ilosc=" + numIloscM.Value + ",Producent='" + txtProducentM.Text 
-                    + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto='" + lblWartoscBrutto.Text 
-                    + "',Stan='"+ cbStanM.Text+"' WHERE ID ="+wybranoT,connection);
+                    + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto=" + Decimal.Parse(lblWartoscBrutto.Text)
+                    + ",Stan='"+ cbStanM.Text+"' WHERE ID ="+wybranoT,connection);
                 modyfikuj_towar.ExecuteNonQuery();
                 niszczenie_pol();
                 MessageBox.Show("Zmodyfikowałeś towar z ID +" + wybranoT);
