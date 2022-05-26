@@ -29,7 +29,7 @@ namespace Biznes_Menedżer
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabTowar = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,24 +45,21 @@ namespace Biznes_Menedżer
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnWyczysc = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblWartoscBrutto = new System.Windows.Forms.Label();
-            this.lblWartoscNetto = new System.Windows.Forms.Label();
             this.lblKpodatkow = new System.Windows.Forms.Label();
+            this.lblWartoscNetto = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSzukaj = new System.Windows.Forms.Button();
             this.txtSzukam = new System.Windows.Forms.TextBox();
             this.dgvPrzegladaj = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pageTModify = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
@@ -86,9 +83,12 @@ namespace Biznes_Menedżer
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.lblWartoscBruttoM = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.lblWartoscNettoM = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.lblKpodatkowM = new System.Windows.Forms.Label();
+            this.tabTowar.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -100,7 +100,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrzegladaj)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.pageTModify.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCenaNettoM)).BeginInit();
@@ -109,18 +109,18 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabTowar
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1940, 900);
-            this.tabControl1.TabIndex = 0;
+            this.tabTowar.Controls.Add(this.tabPage1);
+            this.tabTowar.Controls.Add(this.tabPage2);
+            this.tabTowar.Controls.Add(this.pageTModify);
+            this.tabTowar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabTowar.Location = new System.Drawing.Point(0, 0);
+            this.tabTowar.Margin = new System.Windows.Forms.Padding(0);
+            this.tabTowar.Name = "tabTowar";
+            this.tabTowar.SelectedIndex = 0;
+            this.tabTowar.Size = new System.Drawing.Size(1940, 900);
+            this.tabTowar.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -315,7 +315,6 @@ namespace Biznes_Menedżer
             this.numIlosc.Size = new System.Drawing.Size(961, 34);
             this.numIlosc.TabIndex = 7;
             this.numIlosc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numIlosc.ValueChanged += new System.EventHandler(this.numCena_ValueChanged);
             // 
             // label16
             // 
@@ -347,17 +346,14 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label8, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.label6, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.btnWyczysc, 0, 6);
             this.tableLayoutPanel5.Controls.Add(this.btnDodaj, 1, 6);
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 4);
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.lblWartoscBrutto, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.lblWartoscNetto, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.lblKpodatkow, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.lblWartoscNetto, 0, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(963, 1);
@@ -373,42 +369,6 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(962, 866);
             this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(484, 492);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(475, 123);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "-";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(484, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(475, 123);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "-";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(484, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(475, 123);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "-";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -479,29 +439,32 @@ namespace Biznes_Menedżer
             // lblWartoscBrutto
             // 
             this.lblWartoscBrutto.AutoSize = true;
+            this.lblWartoscBrutto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWartoscBrutto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblWartoscBrutto.Location = new System.Drawing.Point(3, 123);
             this.lblWartoscBrutto.Name = "lblWartoscBrutto";
-            this.lblWartoscBrutto.Size = new System.Drawing.Size(0, 39);
+            this.lblWartoscBrutto.Size = new System.Drawing.Size(475, 123);
             this.lblWartoscBrutto.TabIndex = 5;
-            // 
-            // lblWartoscNetto
-            // 
-            this.lblWartoscNetto.AutoSize = true;
-            this.lblWartoscNetto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblWartoscNetto.Location = new System.Drawing.Point(3, 369);
-            this.lblWartoscNetto.Name = "lblWartoscNetto";
-            this.lblWartoscNetto.Size = new System.Drawing.Size(0, 39);
-            this.lblWartoscNetto.TabIndex = 6;
             // 
             // lblKpodatkow
             // 
             this.lblKpodatkow.AutoSize = true;
+            this.lblKpodatkow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblKpodatkow.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKpodatkow.Location = new System.Drawing.Point(3, 615);
             this.lblKpodatkow.Name = "lblKpodatkow";
-            this.lblKpodatkow.Size = new System.Drawing.Size(0, 39);
+            this.lblKpodatkow.Size = new System.Drawing.Size(475, 123);
             this.lblKpodatkow.TabIndex = 7;
+            // 
+            // lblWartoscNetto
+            // 
+            this.lblWartoscNetto.AutoSize = true;
+            this.lblWartoscNetto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWartoscNetto.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWartoscNetto.Location = new System.Drawing.Point(3, 369);
+            this.lblWartoscNetto.Name = "lblWartoscNetto";
+            this.lblWartoscNetto.Size = new System.Drawing.Size(475, 123);
+            this.lblWartoscNetto.TabIndex = 6;
             // 
             // tabPage2
             // 
@@ -589,16 +552,17 @@ namespace Biznes_Menedżer
             this.dgvPrzegladaj.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrzegladaj_CellEndEdit);
             this.dgvPrzegladaj.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dgvPrzegladaj_PreviewKeyDown);
             // 
-            // tabPage3
+            // pageTModify
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
-            this.tabPage3.Controls.Add(this.tableLayoutPanel6);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1932, 874);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Modyfikuj";
+            this.pageTModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
+            this.pageTModify.Controls.Add(this.tableLayoutPanel6);
+            this.pageTModify.Location = new System.Drawing.Point(4, 22);
+            this.pageTModify.Name = "pageTModify";
+            this.pageTModify.Padding = new System.Windows.Forms.Padding(3);
+            this.pageTModify.Size = new System.Drawing.Size(1932, 874);
+            this.pageTModify.TabIndex = 2;
+            this.pageTModify.Text = "Modyfikuj";
+            this.pageTModify.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // tableLayoutPanel6
             // 
@@ -724,6 +688,7 @@ namespace Biznes_Menedżer
             this.numCenaNettoM.Size = new System.Drawing.Size(961, 34);
             this.numCenaNettoM.TabIndex = 10;
             this.numCenaNettoM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numCenaNettoM.ValueChanged += new System.EventHandler(this.numCenaNettoM_ValueChanged);
             // 
             // numPodatekM
             // 
@@ -736,6 +701,7 @@ namespace Biznes_Menedżer
             this.numPodatekM.Size = new System.Drawing.Size(961, 34);
             this.numPodatekM.TabIndex = 9;
             this.numPodatekM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numPodatekM.ValueChanged += new System.EventHandler(this.numPodatekM_ValueChanged);
             // 
             // txtNr_FakturyM
             // 
@@ -818,9 +784,12 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel8.Controls.Add(this.btnModify, 1, 6);
             this.tableLayoutPanel8.Controls.Add(this.label11, 0, 4);
             this.tableLayoutPanel8.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label13, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label14, 0, 3);
-            this.tableLayoutPanel8.Controls.Add(this.label15, 0, 5);
+            this.tableLayoutPanel8.Controls.Add(this.label13, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.lblWartoscBruttoM, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label14, 1, 3);
+            this.tableLayoutPanel8.Controls.Add(this.lblWartoscNettoM, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.label15, 1, 5);
+            this.tableLayoutPanel8.Controls.Add(this.lblKpodatkowM, 0, 5);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(963, 1);
@@ -944,28 +913,58 @@ namespace Biznes_Menedżer
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(3, 123);
+            this.label13.Location = new System.Drawing.Point(484, 123);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 39);
             this.label13.TabIndex = 5;
+            // 
+            // lblWartoscBruttoM
+            // 
+            this.lblWartoscBruttoM.AutoSize = true;
+            this.lblWartoscBruttoM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWartoscBruttoM.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWartoscBruttoM.Location = new System.Drawing.Point(3, 123);
+            this.lblWartoscBruttoM.Name = "lblWartoscBruttoM";
+            this.lblWartoscBruttoM.Size = new System.Drawing.Size(475, 123);
+            this.lblWartoscBruttoM.TabIndex = 13;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(3, 369);
+            this.label14.Location = new System.Drawing.Point(484, 369);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(0, 39);
             this.label14.TabIndex = 6;
+            // 
+            // lblWartoscNettoM
+            // 
+            this.lblWartoscNettoM.AutoSize = true;
+            this.lblWartoscNettoM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWartoscNettoM.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWartoscNettoM.Location = new System.Drawing.Point(3, 369);
+            this.lblWartoscNettoM.Name = "lblWartoscNettoM";
+            this.lblWartoscNettoM.Size = new System.Drawing.Size(475, 123);
+            this.lblWartoscNettoM.TabIndex = 15;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(3, 615);
+            this.label15.Location = new System.Drawing.Point(484, 615);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(0, 39);
             this.label15.TabIndex = 7;
+            // 
+            // lblKpodatkowM
+            // 
+            this.lblKpodatkowM.AutoSize = true;
+            this.lblKpodatkowM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblKpodatkowM.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKpodatkowM.Location = new System.Drawing.Point(3, 615);
+            this.lblKpodatkowM.Name = "lblKpodatkowM";
+            this.lblKpodatkowM.Size = new System.Drawing.Size(475, 123);
+            this.lblKpodatkowM.TabIndex = 14;
             // 
             // fTowar
             // 
@@ -973,11 +972,11 @@ namespace Biznes_Menedżer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(148)))), ((int)(((byte)(162)))));
             this.ClientSize = new System.Drawing.Size(1940, 900);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabTowar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fTowar";
             this.Text = "Biznes Menedżer";
-            this.tabControl1.ResumeLayout(false);
+            this.tabTowar.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -992,7 +991,7 @@ namespace Biznes_Menedżer
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrzegladaj)).EndInit();
-            this.tabPage3.ResumeLayout(false);
+            this.pageTModify.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
@@ -1007,10 +1006,10 @@ namespace Biznes_Menedżer
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabTowar;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage pageTModify;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtSzukam;
@@ -1033,9 +1032,6 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.NumericUpDown numIlosc;
         private System.Windows.Forms.NumericUpDown numPodatek;
         private System.Windows.Forms.NumericUpDown numCenaNetto;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label5;
@@ -1066,5 +1062,8 @@ namespace Biznes_Menedżer
         private System.Windows.Forms.NumericUpDown numIloscM;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblWartoscBruttoM;
+        private System.Windows.Forms.Label lblWartoscNettoM;
+        private System.Windows.Forms.Label lblKpodatkowM;
     }
 }

@@ -616,10 +616,6 @@ namespace Biznes_Menedżer
                     pochodzenieM = "Cudzoziemskie";
                 }
                 tworzenie_pol();
-                if (wybranoP == 0)
-                {
-                    MessageBox.Show("Nie wybrałeś pracownika, przejdź do zakładki przeglądaj i wybierz (Dwukrotne klikniecie na pracownika).");
-                }
                 if (wybranoP > 0)
                 {
                     MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE pracownicy SET Imie ='" + txtImiePM.Text + "',Nazwisko='" + txtNazwiskoPM.Text + "',Miasto='" + txtMiastoPM.Text
@@ -632,7 +628,7 @@ namespace Biznes_Menedżer
             }
             else
             {
-                MessageBox.Show("Nie wybrałeś Pracownika do modyikowania przejdź do zakładki przeglądaj i wybierz go. (Dwukrotne klikniecie na jakiegos)");
+                MessageBox.Show("Nie wybrałeś Pracownika do modyfikowania przejdź do zakładki przeglądaj i wybierz go. (Dwukrotne klikniecie na jakiegos)");
             }
         }
 

@@ -14,7 +14,7 @@ namespace Biznes_Menedżer
     public partial class fTowar : Form
     {
         MySqlConnection connection = new MySqlConnection("Server=mysql8001.site4now.net;User=a877f4_sklepik;Database=db_a877f4_sklepik;Password=kamilos04;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
-       //MySqlConnection connection = new MySqlConnection("Server=localhost;User=root;Database=sklep;Password=;"); //Pamiętaj by stworzyć za pomocą xamppa bazę sklep i zaimportować z folderu baza danych
+                                                                                                                                                             //MySqlConnection connection = new MySqlConnection("Server=localhost;User=root;Database=sklep;Password=;"); //Pamiętaj by stworzyć za pomocą xamppa bazę sklep i zaimportować z folderu baza danych
         bool polaczony = false;
         private int wybranoO = 0;
         private int wybranoT = 0;
@@ -97,17 +97,18 @@ namespace Biznes_Menedżer
             numPodatek.Text = "";
             numCenaNetto.Text = "";
         }
-
-        private void numCena_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
         public void przeliczanie()
         {
             lblWartoscNetto.Text = numCenaNetto.Value.ToString();
             lblKpodatkow.Text = (numCenaNetto.Value * (numPodatek.Value / 100)).ToString();
             lblWartoscBrutto.Text = (numCenaNetto.Value + (numCenaNetto.Value * (numPodatek.Value / 100))).ToString();
 
+        }
+        public void przliczanieMod()
+        {
+            lblWartoscNettoM.Text = numCenaNettoM.Value.ToString();
+            lblKpodatkowM.Text = (numCenaNettoM.Value * (numPodatekM.Value / 100)).ToString();
+            lblWartoscBruttoM.Text = (numCenaNettoM.Value + (numCenaNettoM.Value * (numPodatekM.Value / 100))).ToString();
         }
 
         private void dgvPrzegladaj_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -146,7 +147,7 @@ namespace Biznes_Menedżer
         {
             int maxIlosc, idTowaru, podatekTowaru;
             decimal cenaNettoTowaru, cenaBruttoTowaru;
-            string nazwaTowaru, producentTowaru, nr_fakturyTowaru,stanTowaru;
+            string nazwaTowaru, producentTowaru, nr_fakturyTowaru, stanTowaru;
             indexUsun = e.RowIndex;
             if (e.RowIndex > -1)
             {
@@ -156,7 +157,7 @@ namespace Biznes_Menedżer
                 {
                     MessageBox.Show("Wybrałeś nie prawidłowo ");
                 }
-                else if(dgvPrzegladaj.CurrentCell.ColumnIndex.Equals(9) && (wybrane.Cells[0].Value is System.DBNull) == false)
+                else if (dgvPrzegladaj.CurrentCell.ColumnIndex.Equals(9) && (wybrane.Cells[0].Value is System.DBNull) == false)
                 {
 
                     idTowaru = Convert.ToInt32(wybrane.Cells[0].Value);
@@ -194,6 +195,20 @@ namespace Biznes_Menedżer
             przeliczanie();
         }
 
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+            przliczanieMod();
+        }
+
+        private void numPodatekM_ValueChanged(object sender, EventArgs e)
+        {
+            przliczanieMod();
+        }
+
+        private void numCenaNettoM_ValueChanged(object sender, EventArgs e)
+        {
+            przliczanieMod();
+        }
 
         private void dgvPrzegladaj_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -213,13 +228,20 @@ namespace Biznes_Menedżer
                 {
                     wybranoT = Convert.ToInt32(wybrane.Cells[0].Value);
                     MessageBox.Show("Wybrałeś obiekt z ID: " + wybranoT);
+                    txtNazwaM.Text = wybrane.Cells[2].Value.ToString();
+                    numIloscM.Text = wybrane.Cells[3].Value.ToString();
+                    txtProducentM.Text = wybrane.Cells[4].Value.ToString();
+                    txtNr_FakturyM.Text = wybrane.Cells[5].Value.ToString();
+                    numPodatekM.Text = wybrane.Cells[6].Value.ToString();
+                    numCenaNettoM.Text = wybrane.Cells[7].Value.ToString();
+                    cbStanM.Text = wybrane.Cells[9].Value.ToString();
                 }
             }
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             tworzenie_pol();
-            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO `towar` (`ID_obiektu`, `Nazwa`, `Ilosc`, `Producent`, `Nr_Faktury`, `Podatki`, `Cena_Netto`, `Cena_Brutto`, `Stan`) VALUES('" + wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + lblWartoscBrutto.Text.Replace(",",".") + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
+            MySqlCommand dodanie_towaru = new MySqlCommand("INSERT INTO `towar` (`ID_obiektu`, `Nazwa`, `Ilosc`, `Producent`, `Nr_Faktury`, `Podatki`, `Cena_Netto`, `Cena_Brutto`, `Stan`) VALUES('" + wybranoO + "','" + txtNazwa.Text + "','" + numIlosc.Value + "','" + txtProducent.Text + "','" + txtNrFaktury.Text + "','" + numPodatek.Value + "','" + numCenaNetto.Value + "','" + lblWartoscBrutto.Text.Replace(",", ".") + "','" + cbStan.GetItemText(cbStan.SelectedItem) + "')", connection);
             if (string.IsNullOrEmpty(txtNazwa.Text) || string.IsNullOrEmpty(numIlosc.Text) || string.IsNullOrEmpty(txtProducent.Text) || string.IsNullOrEmpty(txtNrFaktury.Text) || string.IsNullOrEmpty(numPodatek.Text) || string.IsNullOrEmpty(numCenaNetto.Text) || string.IsNullOrEmpty(cbStan.Text))
             {
                 MessageBox.Show("Nie wypełniłeś wszystkich wymaganych pól. Wypełnij je.");
@@ -234,21 +256,22 @@ namespace Biznes_Menedżer
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            tworzenie_pol();
-            if (wybranoT == 0)
+            if (wybranoT != 0)
             {
-                MessageBox.Show("Nie wybrałeś obiektu, przejdź do zakładki przeglądaj i wybierz (Dwukrotne klikniecie na towar).");
+                tworzenie_pol();
+                if (wybranoT > 0)
+                {
+                    MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE towar SET Nazwa ='" + txtNazwaM.Text + "',Ilosc=" + numIloscM.Value + ",Producent='" + txtProducentM.Text
+                        + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto='" + lblWartoscBruttoM.Text.Replace(",", ".") + "',Stan='" + cbStanM.Text + "' WHERE ID =" + wybranoT, connection);
+                    modyfikuj_towar.ExecuteNonQuery();
+                    niszczenie_pol();
+                    MessageBox.Show("Zmodyfikowałeś towar z ID +" + wybranoT);
+                }
             }
-            if (wybranoT > 0)
+            else
             {
-                MySqlCommand modyfikuj_towar = new MySqlCommand("UPDATE towar SET Nazwa ='" + txtNazwaM.Text + "',Ilosc=" + numIloscM.Value + ",Producent='" + txtProducentM.Text 
-                    + "',Nr_Faktury='" + txtNr_FakturyM.Text + "',Podatki=" + numPodatekM.Value + ",Cena_Netto=" + numCenaNettoM.Value + ",Cena_Brutto=" + Decimal.Parse(lblWartoscBrutto.Text)
-                    + ",Stan='"+ cbStanM.Text+"' WHERE ID ="+wybranoT,connection);
-                modyfikuj_towar.ExecuteNonQuery();
-                niszczenie_pol();
-                MessageBox.Show("Zmodyfikowałeś towar z ID +" + wybranoT);
+                MessageBox.Show("Nie wybrałeś towaru do modyfikowania przejdź do zakładki przeglądaj i wybierz go. (Dwukrotne klikniecie na jakiegos)");
             }
-            
         }
 
     }
