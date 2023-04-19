@@ -20,6 +20,7 @@ namespace Biznes_Menedżer
         public decimal cenaNettoTowaru, cenaBruttoTowaru;
         public string nazwaTowaru, producentTowaru, nr_fakturyTowaru, stanTowaru;
         bool polaczony = false;
+        int a;
         public fStan(int wybranoO,int maxIlosc, int idTowaru, string nazwaTowaru, string producentTowaru, string nr_fakturyTowaru, int podatekTowaru, decimal cenaNettoTowaru, decimal cenaBruttoTowaru, string stanTowaru)
         {
             this.wybranoO = wybranoO;
