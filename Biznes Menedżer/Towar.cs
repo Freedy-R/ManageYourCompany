@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Biznes_Menedżer
 {
-    int a = 15;
+    int a = 11;
     public partial class fTowar : Form
     {
         MySqlConnection connection = new MySqlConnection("Server=mysql8001.site4now.net;User=a877f4_sklepik;Database=db_a877f4_sklepik;Password=kamilos04;");// W przypadku braku połączenia i problemów za komentarzować i odkomentarzować poniższy
